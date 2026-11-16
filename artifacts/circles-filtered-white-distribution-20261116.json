@@ -1,0 +1,609 @@
+{
+  "source": "official-apm-cli",
+  "threadId": "d3fa7f8616aec4d85a30800c87a3a2eb",
+  "scope": [
+    {
+      "path": "/apm/white-screen-monitor",
+      "parameters": {
+        "endTime": "2026-11-16T14:16",
+        "listType": "whiteScreenAllList",
+        "timeType": "dateTime",
+        "childDate": "2026-11-16",
+        "startTime": "2026-11-09T00:00",
+        "clientType": "inner",
+        "metricName": "pageWhiteScreenRate",
+        "secInterval": "3600",
+        "frameGroupBy": "pageRouter",
+        "applicationName": "circles",
+        "whiteFrameCurTab": "distribution-analysis",
+        "whiteScreenLevel": "includes__1,2"
+      },
+      "unmappedParameterNames": [
+        "periodType"
+      ]
+    }
+  ],
+  "evidence": {
+    "id": "E-018",
+    "tool": "apm.white_screen_distribution",
+    "scope": {
+      "app": "circles",
+      "end": "2026-11-16T14:16:00+08:00",
+      "start": "2026-11-09T00:00:00+08:00",
+      "levelCodes": [
+        1,
+        2
+      ],
+      "requestedDataMode": "preaggregated"
+    },
+    "result": {
+      "app": "circles",
+      "mode": "white-screen-distribution",
+      "metric": "hybridWhiteScreenCount",
+      "series": [
+        {
+          "page": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "sharePercent": 68.6,
+          "whiteScreenCount": 745
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-capsule",
+          "sharePercent": 12.98,
+          "whiteScreenCount": 141
+        },
+        {
+          "page": "/circles/home",
+          "sharePercent": 9.21,
+          "whiteScreenCount": 100
+        },
+        {
+          "page": "/circles/campus-cert-xuexin",
+          "sharePercent": 3.04,
+          "whiteScreenCount": 33
+        },
+        {
+          "page": "/circles/circle-select",
+          "sharePercent": 2.12,
+          "whiteScreenCount": 23
+        },
+        {
+          "page": "/circles/circle-square-home",
+          "sharePercent": 1.2,
+          "whiteScreenCount": 13
+        },
+        {
+          "page": "/circles/member-welcome",
+          "sharePercent": 0.74,
+          "whiteScreenCount": 8
+        },
+        {
+          "page": "/circles/messages",
+          "sharePercent": 0.64,
+          "whiteScreenCount": 7
+        },
+        {
+          "page": "/circles/moment/detail",
+          "sharePercent": 0.55,
+          "whiteScreenCount": 6
+        },
+        {
+          "page": "/circles/welcome",
+          "sharePercent": 0.28,
+          "whiteScreenCount": 3
+        },
+        {
+          "page": "/circles/campus-opening-season",
+          "sharePercent": 0.28,
+          "whiteScreenCount": 3
+        },
+        {
+          "page": "/circles/campus-card-result",
+          "sharePercent": 0.18,
+          "whiteScreenCount": 2
+        },
+        {
+          "page": "/circles/member-edit",
+          "sharePercent": 0.09,
+          "whiteScreenCount": 1
+        },
+        {
+          "page": "/circles/mini-profile",
+          "sharePercent": 0.09,
+          "whiteScreenCount": 1
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-home",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/join",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/level-system/member-level/info-sheet-panel",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-guest",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/member-list",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/about",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/campus-card-creating",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/level-system/member-level/tail-select",
+          "sharePercent": 0.0,
+          "whiteScreenCount": 0
+        }
+      ],
+      "byCount": [
+        {
+          "page": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "sharePercent": 68.6,
+          "whiteScreenCount": 745
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-capsule",
+          "sharePercent": 12.98,
+          "whiteScreenCount": 141
+        },
+        {
+          "page": "/circles/home",
+          "sharePercent": 9.21,
+          "whiteScreenCount": 100
+        }
+      ],
+      "groupBy": [
+        "context_matchedPath"
+      ],
+      "windows": [
+        {
+          "end": "2026-11-10T00:00:00+08:00",
+          "start": "2026-11-09T00:00:00+08:00",
+          "success": true,
+          "groupCount": 16,
+          "observedCount": 138.0,
+          "groupsComplete": true,
+          "responseSha256": "2b562c7fc2e07b02bb2a4841910ebd630fc59cc4eeb45e5aedf7547af03f740b"
+        },
+        {
+          "end": "2026-11-11T00:00:00+08:00",
+          "start": "2026-11-10T00:00:00+08:00",
+          "success": true,
+          "groupCount": 16,
+          "observedCount": 138.0,
+          "groupsComplete": true,
+          "responseSha256": "cd9f68956067490cf5850d1b105490f6cdaebc6553137a12502e5f1d2da3a0ae"
+        },
+        {
+          "end": "2026-11-12T00:00:00+08:00",
+          "start": "2026-11-11T00:00:00+08:00",
+          "success": true,
+          "groupCount": 18,
+          "observedCount": 135.0,
+          "groupsComplete": true,
+          "responseSha256": "bef46dc3bc734b9f3ae04d22803db736a92e1a468dbdda867614419123191de3"
+        },
+        {
+          "end": "2026-11-13T00:00:00+08:00",
+          "start": "2026-11-12T00:00:00+08:00",
+          "success": true,
+          "groupCount": 19,
+          "observedCount": 148.0,
+          "groupsComplete": true,
+          "responseSha256": "11d555808a70c0710c9ad70261193015377f851d38f55466f688de58cf69d883"
+        },
+        {
+          "end": "2026-11-14T00:00:00+08:00",
+          "start": "2026-11-13T00:00:00+08:00",
+          "success": true,
+          "groupCount": 16,
+          "observedCount": 157.0,
+          "groupsComplete": true,
+          "responseSha256": "852f122358f697be9be3f0f9eb809bdff65173233ffada35888b8c3d28cb8a07"
+        },
+        {
+          "end": "2026-11-15T00:00:00+08:00",
+          "start": "2026-11-14T00:00:00+08:00",
+          "success": true,
+          "groupCount": 17,
+          "observedCount": 167.0,
+          "groupsComplete": true,
+          "responseSha256": "385f3c5eb17dbfbf13ebb899abc149beb1d7bfb5bfc7736b5da78c10d8721a77"
+        },
+        {
+          "end": "2026-11-16T00:00:00+08:00",
+          "start": "2026-11-15T00:00:00+08:00",
+          "success": true,
+          "groupCount": 17,
+          "observedCount": 141.0,
+          "groupsComplete": true,
+          "responseSha256": "dce910120e9418d4ba48636f97d3bc4892866f5c0271fa57886d884290d49316"
+        },
+        {
+          "end": "2026-11-16T14:16:00+08:00",
+          "start": "2026-11-16T00:00:00+08:00",
+          "success": true,
+          "groupCount": 14,
+          "observedCount": 62.0,
+          "groupsComplete": true,
+          "responseSha256": "e3253cbe765aa669424e21d68e5de90baf3512db81f6163a1dee9c4034434ea3"
+        }
+      ],
+      "coverage": {
+        "complete": true,
+        "plannedWindows": 8,
+        "successfulWindows": 8,
+        "timeRangeComplete": true,
+        "groupLimitPerWindow": 200
+      },
+      "warnings": [
+        "当前官方CLI不能选择或确认APM的预聚合/实时数据模式；尚未与该模式完成同口径对齐，数值不可宣称复现截图。"
+      ],
+      "timeRange": {
+        "end": "2026-11-16T14:16:00+08:00",
+        "start": "2026-11-09T00:00:00+08:00"
+      },
+      "clientType": "inner",
+      "groupCount": 22,
+      "levelCodes": [
+        "1",
+        "2"
+      ],
+      "totalCount": 1086,
+      "aggregation": "sum-of-counts",
+      "observedCount": 1086,
+      "actualDataMode": "official-cli-default-unverified",
+      "appliedFilters": {
+        "measurement_data.i1": {
+          "method": "include",
+          "values": [
+            "1",
+            "2"
+          ]
+        }
+      },
+      "interpretation": "白屏占比=该页面筛选后白屏次数/所有页面同筛选白屏次数；不是页面白屏率，不使用页面PV作分母。",
+      "primaryRanking": "count",
+      "comparisonStatus": "not-verified",
+      "omittedGroupCount": 0,
+      "requestedDataMode": "preaggregated",
+      "otherObservedCount": 0,
+      "definitionReference": {
+        "reference": "APM CLI 随包文档 metric-query.md：标准指标及维度；不是应用自定义指标定义",
+        "referenceSha256": "764a91c78713e32bb3cc35952ed481dee07bab1e64684b9621d8883f6a631646",
+        "definitionSource": "official-cli-reference"
+      }
+    },
+    "purpose": "按链接的固定时间（结束时间早于当前，无需截断）和 whiteScreenLevel=1,2 筛选，查询端内白屏按页面的数量及占比。CLI 无法选择预聚合模式，结果需按工具标记说明。",
+    "success": true,
+    "executed": true,
+    "queriedAt": "2026-11-16T14:52:49+08:00",
+    "subqueries": [
+      {
+        "end": "2026-11-10T00:00:00+08:00",
+        "start": "2026-11-09T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-09T00:00:00+08:00",
+          "--et",
+          "2026-11-10T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 16,
+        "observedCount": 138.0,
+        "groupsComplete": true,
+        "responseSha256": "2b562c7fc2e07b02bb2a4841910ebd630fc59cc4eeb45e5aedf7547af03f740b"
+      },
+      {
+        "end": "2026-11-11T00:00:00+08:00",
+        "start": "2026-11-10T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-10T00:00:00+08:00",
+          "--et",
+          "2026-11-11T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 16,
+        "observedCount": 138.0,
+        "groupsComplete": true,
+        "responseSha256": "cd9f68956067490cf5850d1b105490f6cdaebc6553137a12502e5f1d2da3a0ae"
+      },
+      {
+        "end": "2026-11-12T00:00:00+08:00",
+        "start": "2026-11-11T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-11T00:00:00+08:00",
+          "--et",
+          "2026-11-12T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 18,
+        "observedCount": 135.0,
+        "groupsComplete": true,
+        "responseSha256": "bef46dc3bc734b9f3ae04d22803db736a92e1a468dbdda867614419123191de3"
+      },
+      {
+        "end": "2026-11-13T00:00:00+08:00",
+        "start": "2026-11-12T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-12T00:00:00+08:00",
+          "--et",
+          "2026-11-13T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 19,
+        "observedCount": 148.0,
+        "groupsComplete": true,
+        "responseSha256": "11d555808a70c0710c9ad70261193015377f851d38f55466f688de58cf69d883"
+      },
+      {
+        "end": "2026-11-14T00:00:00+08:00",
+        "start": "2026-11-13T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-13T00:00:00+08:00",
+          "--et",
+          "2026-11-14T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 16,
+        "observedCount": 157.0,
+        "groupsComplete": true,
+        "responseSha256": "852f122358f697be9be3f0f9eb809bdff65173233ffada35888b8c3d28cb8a07"
+      },
+      {
+        "end": "2026-11-15T00:00:00+08:00",
+        "start": "2026-11-14T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-14T00:00:00+08:00",
+          "--et",
+          "2026-11-15T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 17,
+        "observedCount": 167.0,
+        "groupsComplete": true,
+        "responseSha256": "385f3c5eb17dbfbf13ebb899abc149beb1d7bfb5bfc7736b5da78c10d8721a77"
+      },
+      {
+        "end": "2026-11-16T00:00:00+08:00",
+        "start": "2026-11-15T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-15T00:00:00+08:00",
+          "--et",
+          "2026-11-16T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 17,
+        "observedCount": 141.0,
+        "groupsComplete": true,
+        "responseSha256": "dce910120e9418d4ba48636f97d3bc4892866f5c0271fa57886d884290d49316"
+      },
+      {
+        "end": "2026-11-16T14:16:00+08:00",
+        "start": "2026-11-16T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T00:00:00+08:00",
+          "--et",
+          "2026-11-16T14:16:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 14,
+        "observedCount": 62.0,
+        "groupsComplete": true,
+        "responseSha256": "e3253cbe765aa669424e21d68e5de90baf3512db81f6163a1dee9c4034434ea3"
+      }
+    ],
+    "requestCount": 8,
+    "responseSha256": "5c89c0612269e954a132778fdaa622648e62e703e0b9368baeb10521cb4926e8"
+  },
+  "report": {
+    "gaps": [
+      "当前CLI不能选择预聚合模式，与APM预聚合数据尚未同口径对齐。",
+      "用户截图显示前三页为746/140/109次，CLI返回745/141/100次，两者存在差异，原因未查明，不作推测。",
+      "白屏程度单个编号的含义未经映射核实，本次仅按链接中的数值集合1,2执行筛选。"
+    ],
+    "facts": [
+      {
+        "text": "统计范围为circles端内2026-11-09 00:00至11-16 14:16，结束时间早于当前，未截断。已应用白屏程度筛选值1,2，8个窗口均成功，合计1086次。",
+        "evidenceIds": [
+          "E-018"
+        ]
+      },
+      {
+        "text": "/circles/level-system/member-level/influence-upgrade-dialog 有745次，占68.6%。前三页合计986次，约占90.8%。",
+        "evidenceIds": [
+          "E-018"
+        ]
+      },
+      {
+        "text": "占比=该页面筛选后白屏次数÷所有页面同筛选白屏次数，不是页面白屏率，未使用PV作分母。",
+        "evidenceIds": [
+          "E-018"
+        ]
+      },
+      {
+        "text": "本次请求的数据模式为preaggregated，实际为CLI默认通道（未核实），与APM预聚合尚未对齐（not-verified）。",
+        "evidenceIds": [
+          "E-018"
+        ]
+      },
+      {
+        "text": "此筛选下/circles/circle-square-home仅13次，占1.2%。此前该页的18298次和Android占70%是未筛选白屏程度的口径，不适用于本次范围。",
+        "evidenceIds": [
+          "E-018",
+          "E-017"
+        ]
+      }
+    ],
+    "title": "白屏程度1,2筛选下升级弹窗页占68.6%",
+    "status": "evidence-collected",
+    "summary": "按链接固定时段、端内及whiteScreenLevel=1,2筛选，CLI默认通道共查到1086次白屏，升级弹窗页占68.6%。结果来自CLI默认通道，当前CLI不能选择预聚合模式，因此不能宣称复现截图。与截图存在差异，原因未查明。",
+    "hypotheses": [],
+    "generatedAt": "2026-11-16T14:53:15+08:00",
+    "nextActions": [
+      "在APM页面核对数据模式及统计口径，确认与CLI默认通道的差异来源。",
+      "如需追查根因，按Top1页面在相同筛选下抽取样本，并结合截图与会话核查。"
+    ]
+  },
+  "reference": {
+    "source": "user-provided-screenshot",
+    "whiteScreenCounts": [
+      746,
+      140,
+      109
+    ],
+    "comparison": "different; cause not established"
+  }
+}

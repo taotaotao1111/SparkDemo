@@ -1,0 +1,133 @@
+{
+  "metric": "jsErrorCount",
+  "app": "circles",
+  "appType": "rnT",
+  "mode": "summary",
+  "timeRange": {
+    "start": 1794712656000,
+    "end": 1794799056000,
+    "startTime": "2026-11-15 11:17:36",
+    "endTime": "2026-11-16 11:17:36"
+  },
+  "series": [
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": "HTTPClientError"
+      },
+      "value": 138
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "Error"
+      },
+      "value": 133
+    },
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": "Error"
+      },
+      "value": 115
+    },
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": "HTTPBizError"
+      },
+      "value": 112
+    },
+    {
+      "groupBy": {
+        "context_platform": "Harmony",
+        "measurement_data.errorType": "Error"
+      },
+      "value": 107
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "HTTPClientError"
+      },
+      "value": 88
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "HTTPBizError"
+      },
+      "value": 87
+    },
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": "HTTPServerError"
+      },
+      "value": 47
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "HTTPServerError"
+      },
+      "value": 24
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "SchemaError"
+      },
+      "value": 12
+    },
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": ""
+      },
+      "value": 9
+    },
+    {
+      "groupBy": {
+        "context_platform": "Harmony",
+        "measurement_data.errorType": "HTTPServerError"
+      },
+      "value": 7
+    },
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": "SchemaError"
+      },
+      "value": 6
+    },
+    {
+      "groupBy": {
+        "context_platform": "Android",
+        "measurement_data.errorType": "ClientError"
+      },
+      "value": 6
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "RangeError"
+      },
+      "value": 5
+    },
+    {
+      "groupBy": {
+        "context_platform": "Harmony",
+        "measurement_data.errorType": "HTTPBizError"
+      },
+      "value": 4
+    },
+    {
+      "groupBy": {
+        "context_platform": "iOS",
+        "measurement_data.errorType": "TypeError"
+      },
+      "value": 2
+    }
+  ]
+}

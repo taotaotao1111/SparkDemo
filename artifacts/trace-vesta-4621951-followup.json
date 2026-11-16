@@ -1,0 +1,75 @@
+{
+  "taskId": "4621951",
+  "case": "迹线 Trace · 客户端5秒超时 / 网关499",
+  "traceId": "d0cfa9324c81156b1c6eb03425f916c7",
+  "incidentAt": "2026-11-03T10:52:24.492000+08:00",
+  "verifiedAt": "2026-11-05T19:58:22+08:00",
+  "taskState": 50,
+  "taskStateLabel": "回捞完成",
+  "platform": "ios",
+  "targetMatchesOriginalApm": true,
+  "platformClientLogCount": 20,
+  "platformReportedEarliest": "2026-11-03 18:22:44.000",
+  "decryptedFileCount": 1,
+  "downloadedBytes": 4573578,
+  "scannedFiles": [
+    {
+      "file": "client-log-01.log",
+      "bytes": 4573578,
+      "sha256": "a4ea993651c6c0d58de9ba49c828702b3395d1828eec88443af9e1772640a1d8",
+      "lines": 27665,
+      "exactTraceLines": [],
+      "prefixStart": "2026-11-05 11:58:29.782",
+      "prefixEnd": "2026-11-05 19:49:17.861",
+      "nativeEpochStart": "2026-11-05T11:58:29.794000+08:00",
+      "nativeEpochEnd": "2026-11-05T19:49:17.720000+08:00",
+      "targetWindowPrefixLineCount": 0,
+      "prefixTimeLineCount": 19409,
+      "networkMetricTimestampCount": 347
+    }
+  ],
+  "exactTraceHitCount": 0,
+  "evidenceStatus": "downloaded-unmatched-outside-incident",
+  "coversIncident": false,
+  "conclusion": "任务完成且已下载解密日志，但不覆盖原异常时段，精确Trace检索为0；不能新增该次请求的客户端归因证据。",
+  "boundaries": [
+    "平台20个客户端日志与下载后1个解密文件分别计数，不将其视为20条同Trace证据。",
+    "平台最早保留时间晚于原异常；实际明文前缀时间与原生epoch计时均在11月5日，不能还原11月3日上午。",
+    "不据未命中推断原请求未到客户端或服务端；保留此前网关499/47ms结论，断连发起原因仍待证。",
+    "该任务不用于影响力弹窗白屏排查。"
+  ],
+  "queries": [
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "list",
+        "--task-id",
+        "4621951",
+        "--json"
+      ],
+      "queriedAt": "2026-11-05T19:56:45+08:00",
+      "exitCode": 0,
+      "responseSha256": "1e21a6518c0a05bd6517d445cdf303e5192a7216b6f47b8b67153c76bcf97c2d"
+    },
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "download",
+        "--task-id",
+        "4621951",
+        "--wait",
+        "15",
+        "--out",
+        "/private/tmp/trace-4621951-review/download",
+        "--json"
+      ],
+      "queriedAt": "2026-11-05T19:56:59+08:00",
+      "exitCode": 0,
+      "responseSha256": "b33c3fee94f88782c006c2e0bc9f5225a654b6a5fdd22e00183170fd5e5cde71"
+    }
+  ]
+}

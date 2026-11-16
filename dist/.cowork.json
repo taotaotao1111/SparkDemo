@@ -1,0 +1,28 @@
+{
+  "schema": "cowork-project/v1",
+  "id": "cw_proj_bkju3vlft6",
+  "name": "dist",
+  "srcDir": "/Users/taojiaxin/spark-demo/dist",
+  "createdAt": 1793776844489,
+  "updatedAt": 1794811908947,
+  "createdBy": "cowork-cli",
+  "stack": null,
+  "guardCompliant": true,
+  "cowork": {
+    "workId": 1061482,
+    "workDeployType": "APP_DEPLOY",
+    "staticResourceId": 861202,
+    "staticAppId": "sr-b9dff8f1",
+    "alias": "trace-evidence",
+    "accessUrl": "https://cowork.xiaohongshu.com/s/trace-evidence/",
+    "coworkAppUrl": "https://cowork.xiaohongshu.com/app/NWEyYzVjNDc",
+    "rawAccessUrl": "https://cowork.xiaohongshu.com/s/0b683b2f/",
+    "publishedAt": 1794811908947,
+    "visibility": "PUBLIC",
+    "version": "1.0.34",
+    "lastZipHash": "sha256:f4f5af52498ce736db75e215c277f79015666a651150697940fbd7521cea5e23",
+    "appId": "0b683b2f",
+    "deploymentId": 33477,
+    "deploymentStatus": "RUNNING"
+  }
+}

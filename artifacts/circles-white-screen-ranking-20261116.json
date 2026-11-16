@@ -1,0 +1,1615 @@
+{
+  "source": "official-apm-cli",
+  "threadId": "d3fa7f8616aec4d85a30800c87a3a2eb",
+  "verifiedAt": "2026-11-16T14:29:18+08:00",
+  "rankingEvidence": {
+    "id": "E-010",
+    "tool": "apm.white_screen_ranking",
+    "scope": {
+      "app": "circles",
+      "end": "2026-11-16T14:22:18+08:00",
+      "start": "2026-11-09T00:00:00+08:00"
+    },
+    "result": {
+      "app": "circles",
+      "mode": "white-screen-ranking",
+      "byRate": [
+        {
+          "page": "/circles/circle-square-home",
+          "rate": 0.13580430168178242,
+          "pageViews": 134738,
+          "ratePercent": 13.5804,
+          "whiteScreenCount": 18298
+        },
+        {
+          "page": "/circles/campus-cert-xuexin",
+          "rate": 0.08698474521259332,
+          "pageViews": 3081,
+          "ratePercent": 8.6985,
+          "whiteScreenCount": 268
+        },
+        {
+          "page": "/circles/campus-card-creating",
+          "rate": 0.05377358490566038,
+          "pageViews": 2120,
+          "ratePercent": 5.3774,
+          "whiteScreenCount": 114
+        }
+      ],
+      "series": [
+        {
+          "page": "/circles/circle-square-home",
+          "rate": 0.13580430168178242,
+          "pageViews": 134738,
+          "ratePercent": 13.5804,
+          "whiteScreenCount": 18298
+        },
+        {
+          "page": "/circles/campus-cert-xuexin",
+          "rate": 0.08698474521259332,
+          "pageViews": 3081,
+          "ratePercent": 8.6985,
+          "whiteScreenCount": 268
+        },
+        {
+          "page": "/circles/campus-card-creating",
+          "rate": 0.05377358490566038,
+          "pageViews": 2120,
+          "ratePercent": 5.3774,
+          "whiteScreenCount": 114
+        },
+        {
+          "page": "/circles/circle-select",
+          "rate": 0.053514203792496925,
+          "pageViews": 41503,
+          "ratePercent": 5.3514,
+          "whiteScreenCount": 2221
+        },
+        {
+          "page": "/circles/circle-more-panel",
+          "rate": 0.045454545454545456,
+          "pageViews": 22,
+          "ratePercent": 4.5455,
+          "whiteScreenCount": 1
+        },
+        {
+          "page": "/circles/square-college",
+          "rate": 0.04455445544554455,
+          "pageViews": 808,
+          "ratePercent": 4.4554,
+          "whiteScreenCount": 36
+        },
+        {
+          "page": "/circles/sub-category-list",
+          "rate": 0.042028212710262254,
+          "pageViews": 20629,
+          "ratePercent": 4.2028,
+          "whiteScreenCount": 867
+        },
+        {
+          "page": "/circles/block_member_dialog",
+          "rate": 0.02072538860103627,
+          "pageViews": 193,
+          "ratePercent": 2.0725,
+          "whiteScreenCount": 4
+        },
+        {
+          "page": "/circles/schedule-calendar",
+          "rate": 0.008771929824561403,
+          "pageViews": 228,
+          "ratePercent": 0.8772,
+          "whiteScreenCount": 2
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-capsule",
+          "rate": 0.006115970039713969,
+          "pageViews": 1066879,
+          "ratePercent": 0.6116,
+          "whiteScreenCount": 6525
+        },
+        {
+          "page": "/circles/campus-opening-season",
+          "rate": 0.005782652043868395,
+          "pageViews": 5015,
+          "ratePercent": 0.5783,
+          "whiteScreenCount": 29
+        },
+        {
+          "page": "/circles/member-welcome",
+          "rate": 0.004104558219917909,
+          "pageViews": 18516,
+          "ratePercent": 0.4105,
+          "whiteScreenCount": 76
+        },
+        {
+          "page": "/circles/member-edit",
+          "rate": 0.003653113087674714,
+          "pageViews": 6296,
+          "ratePercent": 0.3653,
+          "whiteScreenCount": 23
+        },
+        {
+          "page": "/circles/level-system/member-level/info-sheet-panel",
+          "rate": 0.002911208151382824,
+          "pageViews": 687,
+          "ratePercent": 0.2911,
+          "whiteScreenCount": 2
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "rate": 0.002325504839119271,
+          "pageViews": 425284,
+          "ratePercent": 0.2326,
+          "whiteScreenCount": 989
+        },
+        {
+          "page": "/circles/messages",
+          "rate": 0.002306316251151926,
+          "pageViews": 405842,
+          "ratePercent": 0.2306,
+          "whiteScreenCount": 936
+        },
+        {
+          "page": "/circles/level-system/member-level/tail-select",
+          "rate": 0.0020100502512562816,
+          "pageViews": 995,
+          "ratePercent": 0.201,
+          "whiteScreenCount": 2
+        },
+        {
+          "page": "/circles/mini-profile",
+          "rate": 0.0018817078832751542,
+          "pageViews": 407077,
+          "ratePercent": 0.1882,
+          "whiteScreenCount": 766
+        },
+        {
+          "page": "/circles/member-list",
+          "rate": 0.0015433499773036769,
+          "pageViews": 44060,
+          "ratePercent": 0.1543,
+          "whiteScreenCount": 68
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-home",
+          "rate": 0.0015245737211634905,
+          "pageViews": 49850,
+          "ratePercent": 0.1525,
+          "whiteScreenCount": 76
+        },
+        {
+          "page": "/circles/welcome",
+          "rate": 0.0015005668808216438,
+          "pageViews": 179932,
+          "ratePercent": 0.1501,
+          "whiteScreenCount": 270
+        },
+        {
+          "page": "/circles/campus-cert-upload",
+          "rate": 0.0013508949679162446,
+          "pageViews": 2961,
+          "ratePercent": 0.1351,
+          "whiteScreenCount": 4
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-guest",
+          "rate": 0.0010199184065274778,
+          "pageViews": 16668,
+          "ratePercent": 0.102,
+          "whiteScreenCount": 17
+        },
+        {
+          "page": "/circles/home",
+          "rate": 0.0009092550761461524,
+          "pageViews": 4419002,
+          "ratePercent": 0.0909,
+          "whiteScreenCount": 4018
+        },
+        {
+          "page": "/circles/campus-card-result",
+          "rate": 0.0007804370447450572,
+          "pageViews": 7688,
+          "ratePercent": 0.078,
+          "whiteScreenCount": 6
+        },
+        {
+          "page": "/circles/moment/detail",
+          "rate": 0.0007294261847346754,
+          "pageViews": 3903068,
+          "ratePercent": 0.0729,
+          "whiteScreenCount": 2847
+        },
+        {
+          "page": "/circles/about",
+          "rate": 0.0005541481950601647,
+          "pageViews": 25264,
+          "ratePercent": 0.0554,
+          "whiteScreenCount": 14
+        },
+        {
+          "page": "/circles/join",
+          "rate": 0.00024579838387562604,
+          "pageViews": 65094,
+          "ratePercent": 0.0246,
+          "whiteScreenCount": 16
+        },
+        {
+          "page": "",
+          "rate": 0.0,
+          "pageViews": 3,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "circles/level-system/member-level/influence-upgrade-dialog",
+          "rate": 0.0,
+          "pageViews": 73,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/campus-cert-guide",
+          "rate": 0.0,
+          "pageViews": 6619,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "circles/welcome",
+          "rate": 0.0,
+          "pageViews": 186,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/campus-cert-status",
+          "rate": 0.0,
+          "pageViews": 285,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/campus-cert-select",
+          "rate": 0.0,
+          "pageViews": 5943,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/comments/panel",
+          "rate": 0.0,
+          "pageViews": 7,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "circles/level-system/member-level/influence-capsule",
+          "rate": 0.0,
+          "pageViews": 187,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/ama-welcome",
+          "rate": 0.0,
+          "pageViews": 7,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "circles/circle-select",
+          "rate": 0.0,
+          "pageViews": 6,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "/circles/my-circles",
+          "rate": 0.0,
+          "pageViews": 119,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        },
+        {
+          "page": "circles/circle-square-home",
+          "rate": 0.0,
+          "pageViews": 1,
+          "ratePercent": 0.0,
+          "whiteScreenCount": 0
+        }
+      ],
+      "byCount": [
+        {
+          "page": "/circles/circle-square-home",
+          "rate": 0.13580430168178242,
+          "pageViews": 134738,
+          "ratePercent": 13.5804,
+          "whiteScreenCount": 18298
+        },
+        {
+          "page": "/circles/level-system/member-level/influence-capsule",
+          "rate": 0.006115970039713969,
+          "pageViews": 1066879,
+          "ratePercent": 0.6116,
+          "whiteScreenCount": 6525
+        },
+        {
+          "page": "/circles/home",
+          "rate": 0.0009092550761461524,
+          "pageViews": 4419002,
+          "ratePercent": 0.0909,
+          "whiteScreenCount": 4018
+        }
+      ],
+      "metrics": [
+        "hybridWhiteScreenCount",
+        "pageViewCount",
+        "hybridWhiteScreenErrorRate"
+      ],
+      "windows": [
+        {
+          "end": "2026-11-10T00:00:00+08:00",
+          "start": "2026-11-09T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 36
+        },
+        {
+          "end": "2026-11-11T00:00:00+08:00",
+          "start": "2026-11-10T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 37
+        },
+        {
+          "end": "2026-11-12T00:00:00+08:00",
+          "start": "2026-11-11T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 36
+        },
+        {
+          "end": "2026-11-13T00:00:00+08:00",
+          "start": "2026-11-12T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 35
+        },
+        {
+          "end": "2026-11-14T00:00:00+08:00",
+          "start": "2026-11-13T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 35
+        },
+        {
+          "end": "2026-11-15T00:00:00+08:00",
+          "start": "2026-11-14T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 35
+        },
+        {
+          "end": "2026-11-16T00:00:00+08:00",
+          "start": "2026-11-15T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 38
+        },
+        {
+          "end": "2026-11-16T14:22:18+08:00",
+          "start": "2026-11-16T00:00:00+08:00",
+          "success": true,
+          "rateBasisVerified": true,
+          "verifiedPageCount": 33
+        }
+      ],
+      "coverage": {
+        "complete": true,
+        "plannedWindows": 8,
+        "successfulWindows": 8,
+        "groupLimitPerWindow": 200
+      },
+      "warnings": [],
+      "timeRange": {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-09T00:00:00+08:00"
+      },
+      "clientType": "inner",
+      "groupCount": 40,
+      "aggregation": "sum(whiteScreenCount)/sum(pageViewCount); validated against builtin rate for each window and page",
+      "interpretation": "统计为APM端内白屏判定；次数/白屏率排行不同。低PV页面需结合访问量评估，排行本身不能证明技术根因。",
+      "primaryRanking": "rate",
+      "requestedRange": {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-09T00:00:00+08:00"
+      },
+      "futureEndClipped": false,
+      "omittedGroupCount": 0,
+      "definitionReference": {
+        "name": "hybridWhiteScreenCount",
+        "alias": "白屏数（端内）",
+        "reference": "APM CLI 随包文档 metric-query.md：标准指标及维度；不是应用自定义指标定义",
+        "aggregation": "count",
+        "referenceSha256": "764a91c78713e32bb3cc35952ed481dee07bab1e64684b9621d8883f6a631646",
+        "definitionSource": "official-cli-reference",
+        "supportedFilters": [
+          "context_platform",
+          "context_appVersion",
+          "context_artifactVersion",
+          "context_matchedPath",
+          "context_networkType",
+          "measurement_data.i1",
+          "measurement_data.i3"
+        ]
+      }
+    },
+    "purpose": "按链接口径（circles、端内白屏率 hybridWhiteScreenErrorRate）查询页面排行。链接结束时间 11-17 14:08 晚于当前，按本轮开始时间截止到 2026-11-16 14:22:18（北京时间）。目标是取得按白屏率和按白屏次数的 Top3，以及各页面的白屏次数和 PV。",
+    "success": true,
+    "executed": true,
+    "queriedAt": "2026-11-16T14:22:25+08:00",
+    "subqueries": [
+      {
+        "end": "2026-11-10T00:00:00+08:00",
+        "start": "2026-11-09T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-09T00:00:00+08:00",
+          "--et",
+          "2026-11-10T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "2bfcd7ff0ef471a1ac0fb51d5af11344117a2bd28c81250057cb6601eea8facd"
+      },
+      {
+        "end": "2026-11-10T00:00:00+08:00",
+        "start": "2026-11-09T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-09T00:00:00+08:00",
+          "--et",
+          "2026-11-10T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "5dab01a2bd9eedd7fae4186a2c7c79f47b15f9e7bf6e6d40961e10d7e0b02acd"
+      },
+      {
+        "end": "2026-11-10T00:00:00+08:00",
+        "start": "2026-11-09T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-09T00:00:00+08:00",
+          "--et",
+          "2026-11-10T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "0c4cc7b459d352204df53f37cff2c2fe08d3f29799e63834d2e6f6f36237f0f2"
+      },
+      {
+        "end": "2026-11-11T00:00:00+08:00",
+        "start": "2026-11-10T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-10T00:00:00+08:00",
+          "--et",
+          "2026-11-11T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "763d28b0de06f670cf0cdb2373cc3bea7f332cd7d763846ff1c8d45363035eea"
+      },
+      {
+        "end": "2026-11-11T00:00:00+08:00",
+        "start": "2026-11-10T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-10T00:00:00+08:00",
+          "--et",
+          "2026-11-11T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "47d466afdaf06ee86b65494db86c739959e9c8d01438c2c3ea341fcf1310dc1c"
+      },
+      {
+        "end": "2026-11-11T00:00:00+08:00",
+        "start": "2026-11-10T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-10T00:00:00+08:00",
+          "--et",
+          "2026-11-11T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "fec0b2ae96013bebbb5d98a1d75adc6ec17146efeede6e8589f28cef4e0e12e1"
+      },
+      {
+        "end": "2026-11-12T00:00:00+08:00",
+        "start": "2026-11-11T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-11T00:00:00+08:00",
+          "--et",
+          "2026-11-12T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "897d82dbdca9496b3f3180b941f0f7c41880931b1f22c170c6350b8053968743"
+      },
+      {
+        "end": "2026-11-12T00:00:00+08:00",
+        "start": "2026-11-11T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-11T00:00:00+08:00",
+          "--et",
+          "2026-11-12T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "f3079139cfefd5a05324d5ae48d3bbe8262c0ff0cdc181278145469efe6bb0ff"
+      },
+      {
+        "end": "2026-11-12T00:00:00+08:00",
+        "start": "2026-11-11T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-11T00:00:00+08:00",
+          "--et",
+          "2026-11-12T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "f91df73fb9fd8bdceab22144bda810698449bedb28aee57bfe03deee70af74f6"
+      },
+      {
+        "end": "2026-11-13T00:00:00+08:00",
+        "start": "2026-11-12T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-12T00:00:00+08:00",
+          "--et",
+          "2026-11-13T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "8cb4e7d0b4a95dff4ef4988beee32647efbde81a2ccd81b8299b0401cd959186"
+      },
+      {
+        "end": "2026-11-13T00:00:00+08:00",
+        "start": "2026-11-12T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-12T00:00:00+08:00",
+          "--et",
+          "2026-11-13T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "f009d36b587d2bfde2844d10e2016d02c39cbc4bb8f1aa0a5268f63721483351"
+      },
+      {
+        "end": "2026-11-13T00:00:00+08:00",
+        "start": "2026-11-12T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-12T00:00:00+08:00",
+          "--et",
+          "2026-11-13T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "a02cb8a05705d061f8a6e16a75462685e9257df61fa22ad7c7ee22fa2a818b69"
+      },
+      {
+        "end": "2026-11-14T00:00:00+08:00",
+        "start": "2026-11-13T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-13T00:00:00+08:00",
+          "--et",
+          "2026-11-14T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "af7cab07fcfdd4cb430eb6cc3d169d0289ca2645b15d3b440f386a83d23c1351"
+      },
+      {
+        "end": "2026-11-14T00:00:00+08:00",
+        "start": "2026-11-13T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-13T00:00:00+08:00",
+          "--et",
+          "2026-11-14T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "fa35ef9ca19cb16ab0ed73aa72796137b027151be6aa720326d9342569dd8bd2"
+      },
+      {
+        "end": "2026-11-14T00:00:00+08:00",
+        "start": "2026-11-13T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-13T00:00:00+08:00",
+          "--et",
+          "2026-11-14T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "93877370f6eb0061fa3dd0bf205d8c57c4aec92e7b3c5da6b095fa4bc70444fe"
+      },
+      {
+        "end": "2026-11-15T00:00:00+08:00",
+        "start": "2026-11-14T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-14T00:00:00+08:00",
+          "--et",
+          "2026-11-15T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "2089c8e3d2650d4c483c3ed0d2203da948b79d8fd3a9df794c97d6f0c8f14521"
+      },
+      {
+        "end": "2026-11-15T00:00:00+08:00",
+        "start": "2026-11-14T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-14T00:00:00+08:00",
+          "--et",
+          "2026-11-15T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "c0a5e5ee4b50086e7afd4710fb11d827ea95f6034003dc815f4c5628e0cfe5f3"
+      },
+      {
+        "end": "2026-11-15T00:00:00+08:00",
+        "start": "2026-11-14T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-14T00:00:00+08:00",
+          "--et",
+          "2026-11-15T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "b7992fd9d511526e4d8f959d48fc8a208adb09f6c165bef2b4a58e8bfacfe972"
+      },
+      {
+        "end": "2026-11-16T00:00:00+08:00",
+        "start": "2026-11-15T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-15T00:00:00+08:00",
+          "--et",
+          "2026-11-16T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "edda233c78260f4e4528ebd3fb1cb02dbb485c481470c003bcd562f70a2017f7"
+      },
+      {
+        "end": "2026-11-16T00:00:00+08:00",
+        "start": "2026-11-15T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-15T00:00:00+08:00",
+          "--et",
+          "2026-11-16T00:00:00+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "19d1cba0fc0f2d0642339763528e9108c0505c207a2b95bddcc8648deea90795"
+      },
+      {
+        "end": "2026-11-16T00:00:00+08:00",
+        "start": "2026-11-15T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-15T00:00:00+08:00",
+          "--et",
+          "2026-11-16T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "5e6fbea261ae2a5e441458cacaeda1a8dc0aefe2bfe2579ab6a56b4c1eb9764c"
+      },
+      {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-16T00:00:00+08:00",
+        "metric": "hybridWhiteScreenCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T00:00:00+08:00",
+          "--et",
+          "2026-11-16T14:22:18+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "6bac1f880c9f71c6a140db987cb36a9135f7469cc2369e7c6bf237376e6bbf7a"
+      },
+      {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-16T00:00:00+08:00",
+        "metric": "pageViewCount",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T00:00:00+08:00",
+          "--et",
+          "2026-11-16T14:22:18+08:00",
+          "--metric",
+          "pageViewCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "5745829a1eac96601ccf16a2032855368595481f5af5680fe80b5d89fb0c89f6"
+      },
+      {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-16T00:00:00+08:00",
+        "metric": "hybridWhiteScreenErrorRate",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T00:00:00+08:00",
+          "--et",
+          "2026-11-16T14:22:18+08:00",
+          "--metric",
+          "hybridWhiteScreenErrorRate",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_matchedPath",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "responseSha256": "cc965c1fedb140b2af78cdefee2a3ced1b5407f1705219cad108ff7c94809dcd"
+      }
+    ],
+    "requestCount": 24,
+    "responseSha256": "b0e3e2a0f13a49b938d376f631f378a5d9485e3f251b920ffa6e18d3352ee000"
+  },
+  "platformEvidence": {
+    "id": "E-017",
+    "tool": "apm.metric_range",
+    "scope": {
+      "app": "circles",
+      "end": "2026-11-16T14:22:18+08:00",
+      "name": "hybridWhiteScreenCount",
+      "start": "2026-11-09T00:00:00+08:00",
+      "filters": {
+        "context_matchedPath": {
+          "method": "include",
+          "values": [
+            "/circles/circle-square-home"
+          ]
+        }
+      },
+      "groupBy": [
+        "context_platform"
+      ]
+    },
+    "result": {
+      "app": "circles",
+      "mode": "range-summary",
+      "metric": "hybridWhiteScreenCount",
+      "series": [
+        {
+          "value": 12815,
+          "groupBy": {
+            "context_platform": "Android"
+          },
+          "percentage": 70.03
+        },
+        {
+          "value": 4784,
+          "groupBy": {
+            "context_platform": "iOS"
+          },
+          "percentage": 26.14
+        },
+        {
+          "value": 699,
+          "groupBy": {
+            "context_platform": "Harmony"
+          },
+          "percentage": 3.82
+        }
+      ],
+      "groupBy": [
+        "context_platform"
+      ],
+      "windows": [
+        {
+          "end": "2026-11-10T00:00:00+08:00",
+          "start": "2026-11-09T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 599.0,
+          "groupsComplete": true,
+          "responseSha256": "6e97dc816dee1478ecfe73bff1d0af9d7ec4115229ca29ebe7276628baf46fd0"
+        },
+        {
+          "end": "2026-11-11T00:00:00+08:00",
+          "start": "2026-11-10T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 1954.0,
+          "groupsComplete": true,
+          "responseSha256": "5de599ba3467fcb6c50cbe5d80c4a1caac138a1d844843a3f8e8d81625073b78"
+        },
+        {
+          "end": "2026-11-12T00:00:00+08:00",
+          "start": "2026-11-11T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 2670.0,
+          "groupsComplete": true,
+          "responseSha256": "b6709940a93cdd4f3212fb47c97501f45c7e773c28f944dfb6d6a0981d6549e7"
+        },
+        {
+          "end": "2026-11-13T00:00:00+08:00",
+          "start": "2026-11-12T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 2445.0,
+          "groupsComplete": true,
+          "responseSha256": "cea0f3cf78776294f23279d530bafd9412ad466b4190f79b204d5d97da5dbfd3"
+        },
+        {
+          "end": "2026-11-14T00:00:00+08:00",
+          "start": "2026-11-13T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 2479.0,
+          "groupsComplete": true,
+          "responseSha256": "923667765363a484d869bee13a9379735bb67553675b4f6521442d7f18ce2b03"
+        },
+        {
+          "end": "2026-11-15T00:00:00+08:00",
+          "start": "2026-11-14T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 3333.0,
+          "groupsComplete": true,
+          "responseSha256": "67e0bd93ce8a2e3d162a159c69cea2028272fb60e93cc52e26498f696d35705a"
+        },
+        {
+          "end": "2026-11-16T00:00:00+08:00",
+          "start": "2026-11-15T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 3454.0,
+          "groupsComplete": true,
+          "responseSha256": "115dbdc934ebdc348b42b997f5ccb299c6f05bc9270ee9671367edd9b0ace37e"
+        },
+        {
+          "end": "2026-11-16T14:22:18+08:00",
+          "start": "2026-11-16T00:00:00+08:00",
+          "success": true,
+          "groupCount": 3,
+          "observedCount": 1364.0,
+          "groupsComplete": true,
+          "responseSha256": "4381c5343c863fe90fb41358372853dd30615fdc1b64adf95926489f98c6b926"
+        }
+      ],
+      "coverage": {
+        "complete": true,
+        "plannedWindows": 8,
+        "successfulWindows": 8,
+        "timeRangeComplete": true,
+        "groupLimitPerWindow": 200
+      },
+      "warnings": [],
+      "timeRange": {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-09T00:00:00+08:00"
+      },
+      "groupCount": 3,
+      "totalCount": 18298,
+      "aggregation": "sum-of-counts",
+      "observedCount": 18298,
+      "omittedGroupCount": 0,
+      "otherObservedCount": 0,
+      "definitionReference": {
+        "reference": "APM CLI 随包文档 metric-query.md：标准指标及维度；不是应用自定义指标定义",
+        "referenceSha256": "764a91c78713e32bb3cc35952ed481dee07bab1e64684b9621d8883f6a631646",
+        "definitionSource": "official-cli-reference"
+      }
+    },
+    "purpose": "按 include 筛选 /circles/circle-square-home，查固定范围内端内白屏次数的平台分布，核对样本中 Harmony 占 19/20 能否代表全量。",
+    "success": true,
+    "executed": true,
+    "queriedAt": "2026-11-16T14:28:45+08:00",
+    "subqueries": [
+      {
+        "end": "2026-11-10T00:00:00+08:00",
+        "start": "2026-11-09T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-09T00:00:00+08:00",
+          "--et",
+          "2026-11-10T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 599.0,
+        "groupsComplete": true,
+        "responseSha256": "6e97dc816dee1478ecfe73bff1d0af9d7ec4115229ca29ebe7276628baf46fd0"
+      },
+      {
+        "end": "2026-11-11T00:00:00+08:00",
+        "start": "2026-11-10T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-10T00:00:00+08:00",
+          "--et",
+          "2026-11-11T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 1954.0,
+        "groupsComplete": true,
+        "responseSha256": "5de599ba3467fcb6c50cbe5d80c4a1caac138a1d844843a3f8e8d81625073b78"
+      },
+      {
+        "end": "2026-11-12T00:00:00+08:00",
+        "start": "2026-11-11T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-11T00:00:00+08:00",
+          "--et",
+          "2026-11-12T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 2670.0,
+        "groupsComplete": true,
+        "responseSha256": "b6709940a93cdd4f3212fb47c97501f45c7e773c28f944dfb6d6a0981d6549e7"
+      },
+      {
+        "end": "2026-11-13T00:00:00+08:00",
+        "start": "2026-11-12T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-12T00:00:00+08:00",
+          "--et",
+          "2026-11-13T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 2445.0,
+        "groupsComplete": true,
+        "responseSha256": "cea0f3cf78776294f23279d530bafd9412ad466b4190f79b204d5d97da5dbfd3"
+      },
+      {
+        "end": "2026-11-14T00:00:00+08:00",
+        "start": "2026-11-13T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-13T00:00:00+08:00",
+          "--et",
+          "2026-11-14T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 2479.0,
+        "groupsComplete": true,
+        "responseSha256": "923667765363a484d869bee13a9379735bb67553675b4f6521442d7f18ce2b03"
+      },
+      {
+        "end": "2026-11-15T00:00:00+08:00",
+        "start": "2026-11-14T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-14T00:00:00+08:00",
+          "--et",
+          "2026-11-15T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 3333.0,
+        "groupsComplete": true,
+        "responseSha256": "67e0bd93ce8a2e3d162a159c69cea2028272fb60e93cc52e26498f696d35705a"
+      },
+      {
+        "end": "2026-11-16T00:00:00+08:00",
+        "start": "2026-11-15T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-15T00:00:00+08:00",
+          "--et",
+          "2026-11-16T00:00:00+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 3454.0,
+        "groupsComplete": true,
+        "responseSha256": "115dbdc934ebdc348b42b997f5ccb299c6f05bc9270ee9671367edd9b0ace37e"
+      },
+      {
+        "end": "2026-11-16T14:22:18+08:00",
+        "start": "2026-11-16T00:00:00+08:00",
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T00:00:00+08:00",
+          "--et",
+          "2026-11-16T14:22:18+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/circle-square-home\"]}}",
+          "--group-by",
+          "context_platform",
+          "--limit",
+          "200"
+        ],
+        "success": true,
+        "executed": true,
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "groupCount": 3,
+        "observedCount": 1364.0,
+        "groupsComplete": true,
+        "responseSha256": "4381c5343c863fe90fb41358372853dd30615fdc1b64adf95926489f98c6b926"
+      }
+    ],
+    "requestCount": 8,
+    "responseSha256": "5d147ba4b3b05ae746f9588ac6de4c7612b21774004ec05e914ce0f88d18faa8"
+  },
+  "report": {
+    "gaps": [
+      "占70%的Android白屏尚未查看任何 i7=1 样本或会话，主因分布未知。",
+      "该页白屏的 type(i1) 分布尚未统计；E-012 是因 in 参数格式错误而失败，并非维度不支持。",
+      "没有完整的因果证据，具体技术根因尚未证实。"
+    ],
+    "facts": [
+      {
+        "text": "统计范围为11-09 00:00至11-16 14:22:18（北京时间），8段均完整核验。广场首页白屏18298次、PV 134738，白屏率13.58%，白屏率和次数均排第1。",
+        "evidenceIds": [
+          "E-010"
+        ]
+      },
+      {
+        "text": "该页全段端内白屏共18298次，与排行一致。按平台分：Android 12815次（70.03%）、iOS 4784次（26.14%）、Harmony 699次（3.82%）。8段均完整返回，无分组截断。",
+        "evidenceIds": [
+          "E-017"
+        ]
+      },
+      {
+        "text": "20条 i7=1 样本中19条为Harmony。日志实际只覆盖11-16 10:22–14:22，且已达到条数上限，未覆盖全段，只能解释样本本身。",
+        "evidenceIds": [
+          "E-011"
+        ]
+      },
+      {
+        "text": "一条iOS样本（ratio=98、type=3）所在会话中，容器和框架均加载成功，两个广场接口返回200，LCP为7548ms；14:07:50记录到白屏。会话导出被截断。",
+        "evidenceIds": [
+          "E-011",
+          "E-014"
+        ]
+      },
+      {
+        "text": "Harmony样本的sessionRef为空。按用户在13:10–13:25查询会话，未查到。",
+        "evidenceIds": [
+          "E-011",
+          "E-013"
+        ]
+      }
+    ],
+    "title": "广场首页白屏以Android为主，样本不具代表性",
+    "status": "evidence-collected",
+    "summary": "端内白屏页面排行已确认（见表），/circles/circle-square-home 白屏率和次数均居第1。该页全段白屏中Android占70%，Harmony仅3.8%，因此20条样本中19条为Harmony不能代表全量。具体技术原因目前没有证据，仍待确认。",
+    "hypotheses": [
+      {
+        "text": "iOS这条样本页面加载较慢（PV到LCP约7.5s），白屏检测可能落在渲染完成之前或附近。这仅为单样本，是否为真实白屏、是否与主因相关均待验证。",
+        "evidenceIds": [
+          "E-014"
+        ]
+      }
+    ],
+    "generatedAt": "2026-11-16T14:29:18+08:00",
+    "nextActions": [
+      "对该页用 include 筛选，同时按 context_platform 和 measurement_data.i1 分组，补查次数分布。",
+      "按该页、Android、i7=1 抽取少量带会话的样本，还原加载、渲染和退出记录。",
+      "补充按 context_appVersion 的分布，确认是否集中在特定版本。"
+    ]
+  }
+}

@@ -1,0 +1,1545 @@
+{
+  "id": "timeout-200-review-v3",
+  "kind": "retained-evidence-review",
+  "reviewedAt": "2026-11-05T19:06:11+08:00",
+  "sourceArtifactSha256": "99d655c025413e1d92762b3094771c7275cba511c507adbb4154bc18590c29d1",
+  "binding": {
+    "traceId": "d0cfa8c0160fd956a28a674778396feb",
+    "timestamp": 1793674286110,
+    "bundle": "circles@3.15.0",
+    "endpoint": "/api/sns/v1/circle/base",
+    "method": "GET",
+    "nativeFileSha256": "4ce89f8b5e4b77bf7ec4cf691419c6b890330864fca72c11911e610f0026f62f",
+    "nativeEndTimestamp": 1793674286105
+  },
+  "scope": "针对原样本、原始日志哈希绑定的留存复核；不是新一轮在线查询或已确认根因。",
+  "status": "stage-located",
+  "rootCauseConfirmed": false,
+  "nativeEvidenceId": "REV-NATIVE-STAGES",
+  "contextEvidenceId": "REV-DEVICE-CONTEXT",
+  "gatewayEvidenceId": "REV-GATEWAY-CHECK",
+  "boundaryEvidenceId": "REV-EVIDENCE-BOUNDARY",
+  "facts": [
+    {
+      "title": "已定位到原生发送前等待",
+      "text": "Cronet fetchStart至requestStart间隔4577ms；日志另记录session_wait=2214ms，完整等待路径仍需核对。",
+      "evidenceIds": [
+        "REV-NATIVE-STAGES"
+      ]
+    },
+    {
+      "title": "目标请求被日志分类为超时",
+      "text": "errorCode=-1001、cancelled=0、hasResponse=0；不能据此确认主动取消缺陷。",
+      "evidenceIds": [
+        "REV-NATIVE-STAGES"
+      ]
+    },
+    {
+      "title": "同设备多个接口出现超时",
+      "text": "指定20秒请求开始窗口内观察19条独立请求、13条客户端超时；仅为设备上下文。",
+      "evidenceIds": [
+        "REV-DEVICE-CONTEXT"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "title": "网络链路不畅",
+      "state": "待验证",
+      "text": "同设备多个接口超时，值得优先排查；尚缺链路丢包、重传及本请求连接绑定证据。",
+      "evidenceIds": [
+        "REV-NATIVE-STAGES",
+        "REV-DEVICE-CONTEXT"
+      ]
+    },
+    {
+      "title": "客户端连接与会话管理异常",
+      "state": "待验证",
+      "text": "发送前等待和session_wait指向原生阶段；尚未区分会话等待、socket调度及容灾分支。",
+      "evidenceIds": [
+        "REV-NATIVE-STAGES"
+      ]
+    }
+  ],
+  "boundary": {
+    "title": "阶段已定位，具体根因仍待补证",
+    "text": "现有历史日志和补查未取得完整请求到连接的绑定；云端采样记录与当前连通诊断不能还原本请求。",
+    "nextAction": "同版本复现并采集完整NetLog",
+    "requiredEvidence": [
+      "请求到连接的source_dependency与连接/stream标识",
+      "会话等待、socket调度、容灾和取消的完整事件顺序",
+      "固定App与RN版本、网络条件和5秒超时配置的复现样本"
+    ]
+  },
+  "references": [
+    {
+      "title": "网络库日志字段定义",
+      "url": "https://docs.xiaohongshu.com/doc/d827fb985e793f8a39aa84f77fc7a4a3"
+    },
+    {
+      "title": "连接建立流程",
+      "url": "https://docs.xiaohongshu.com/doc/3b93488704634454d825f02dfe5d3811"
+    }
+  ],
+  "records": [
+    {
+      "id": "REV-NATIVE-STAGES",
+      "source": "review",
+      "type": "native-review",
+      "title": "原生发送前等待与超时分类复核",
+      "traceId": "d0cfa8c0160fd956a28a674778396feb",
+      "endpoint": "/api/sns/v1/circle/base",
+      "method": "GET",
+      "occurredAt": "2026-11-03 10:51:26.110",
+      "queryId": "",
+      "payload": {
+        "sourceFile": "client-log-04.log",
+        "fileSha256": "4ce89f8b5e4b77bf7ec4cf691419c6b890330864fca72c11911e610f0026f62f",
+        "sourceLineNumbers": [
+          12610,
+          12647,
+          12648
+        ],
+        "format": "原始字段摘录与同端时间差计算，非连续日志原文",
+        "fetchStart": 1793674281009,
+        "requestStart": 1793674285586,
+        "requestEnd": 1793674285589,
+        "nativeEnd": 1793674286105,
+        "callDuration": 5096,
+        "fetchToRequestStartMs": 4577,
+        "session_wait": 2214,
+        "errorCode": -1001,
+        "cancelled": 0,
+        "hasResponse": 0,
+        "receiveBytesTotal": 0,
+        "nativeClockDifferenceMs": 5097,
+        "roundingNote": "callDuration原值5096ms与epoch起止差5097ms相差1ms，分别保留。"
+      },
+      "sourceUrl": "https://vesta.devops.xiaohongshu.com/xhs/log/log-salvage"
+    },
+    {
+      "id": "REV-DEVICE-CONTEXT",
+      "source": "review",
+      "type": "investigation-context",
+      "title": "同设备19条请求的独立对照",
+      "traceId": "",
+      "requestId": "",
+      "queryId": "REV-Q-02",
+      "payload": {
+        "scope": "同设备已下载日志；按请求开始时间筛选，非全量接口故障率。",
+        "windowStart": "2026-11-03 10:51:10",
+        "windowEnd": "2026-11-03 10:51:30",
+        "requestCount": 19,
+        "clientTimeoutCount": 13,
+        "gateway200ForClientTimeout": 11,
+        "gateway499ForClientTimeout": 1,
+        "gateway400ForClientTimeout": 1,
+        "deduplication": [
+          "xrayTraceId",
+          "requestCallStartTimestamp",
+          "requestCallEndTimestamp"
+        ],
+        "records": [
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.029,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.029
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 3567,
+            "x-b3-traceid": "ee949861354dd050",
+            "x-xray-traceid": "d0cfa8ccf3b79aea2067eb0a38b63199",
+            "path": "/api/sns/v1/note/detailfeed/preload",
+            "clientStart": 1793674287596,
+            "clientEnd": 1793674291800,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.103,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.103
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 4032,
+            "x-b3-traceid": "908e1c16964e6ece",
+            "x-xray-traceid": "d0cfa8af57b79ada0c68d2cfbe26d3e5",
+            "path": "/api/sns/v3/user/me",
+            "clientStart": 1793674272432,
+            "clientEnd": 1793674287456,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.088,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.087
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 394,
+            "x-b3-traceid": "c0b8893a6bf438d9",
+            "x-xray-traceid": "d0cfa8bcdc379ae17c5408aa07466d49",
+            "path": "/api/sns/v2/user/tab/second_filter",
+            "clientStart": 1793674279357,
+            "clientEnd": 1793674291603,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.072,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.072
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 2226,
+            "x-b3-traceid": "1b11481b97804a63",
+            "x-xray-traceid": "d0cfa8be62b79ae38325b79ff62fa001",
+            "path": "/api/sns/v6/message/detect",
+            "clientStart": 1793674280134,
+            "clientEnd": 1793674291616,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.013,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.012
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 41,
+            "x-b3-traceid": "58365ab1dbe43e0e",
+            "x-xray-traceid": "d0cfa8ca9cb79ae814fcfac1b8860826",
+            "path": "/api/sns/badge/update_badge",
+            "clientStart": 1793674286403,
+            "clientEnd": 1793674291748,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.03,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.029
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 47,
+            "x-b3-traceid": "37444f5f01c7d62d",
+            "x-xray-traceid": "d0cfa8b052b79adcd594f66130049a19",
+            "path": "/api/sns/v5/recommend/user/explore",
+            "clientStart": 1793674272941,
+            "clientEnd": 1793674288019,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.014,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.012
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 92,
+            "x-b3-traceid": "0e64843b7b961696",
+            "x-xray-traceid": "d0cfa8afddb79adb38d63db0ad85ad01",
+            "path": "/api/sns/capa/servicegw/v1/guide_event",
+            "clientStart": 1793674272704,
+            "clientEnd": 1793674287863,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.165,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.03
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 130,
+            "x-b3-traceid": "3b17d3b20492c68b",
+            "x-xray-traceid": "d0cfa8c7a5379ae504542f045aae26b7",
+            "path": "/api/sns/v2/system_service/splash_async_optimization",
+            "clientStart": 1793674284880,
+            "clientEnd": 1793674291739,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.065,
+            "response_status": 499,
+            "upstream_response_time": [
+              0.064
+            ],
+            "upstream_status": [
+              0
+            ],
+            "body_bytes_sent": 0,
+            "x-b3-traceid": "0e017fd75e3e854a",
+            "x-xray-traceid": "d0cfa8aedb379ad4aa8eccc042efc7a1",
+            "path": "/api/sns/v4/note/user/posted",
+            "clientStart": 1793674272184,
+            "clientEnd": 1793674287217,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:31+08:00",
+            "request_time": 0.009,
+            "response_status": 400,
+            "upstream_response_time": [
+              0
+            ],
+            "upstream_status": [
+              0
+            ],
+            "body_bytes_sent": 0,
+            "x-b3-traceid": "98717699df76e340",
+            "x-xray-traceid": "d0cfa8ad2db79ad3762d13ea7210f22a",
+            "path": "/api/sns/badge/update_badge",
+            "clientStart": 1793674271330,
+            "clientEnd": 1793674286389,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-1"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:41+08:00",
+            "request_time": 0.017,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.016
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 132,
+            "x-b3-traceid": "66c6b1f5ca964795",
+            "x-xray-traceid": "d0cfa8b166379ade9b4dbe3fe7dd0b09",
+            "path": "/api/sns/v2/user/tab/second_filter",
+            "clientStart": 1793674273489,
+            "clientEnd": 1793674288554,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:41+08:00",
+            "request_time": 0.017,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.015
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 66,
+            "x-b3-traceid": "c9bbbc556491b254",
+            "x-xray-traceid": "d0cfa8cce4379ae9fcf2ac85385c223b",
+            "path": "/api/sns/v1/content/navigator",
+            "clientStart": 1793674287566,
+            "clientEnd": 1793674301349,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-3"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:43+08:00",
+            "request_time": 0.029,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.028
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 394,
+            "x-b3-traceid": "d827ea1ab63f46be",
+            "x-xray-traceid": "d0cfa8bcdf379ae21a9789b85ca73260",
+            "path": "/api/sns/v2/user/tab/second_filter",
+            "clientStart": 1793674279361,
+            "clientEnd": 1793674294553,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:43+08:00",
+            "request_time": 0.121,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.12
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 5281,
+            "x-b3-traceid": "a7d874959b8f40d3",
+            "x-xray-traceid": "d0cfa8c0160fd956a28a674778396feb",
+            "path": "/api/sns/v1/circle/base",
+            "clientStart": 1793674281008,
+            "clientEnd": 1793674286105,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:43+08:00",
+            "request_time": 0.019,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.018
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 111,
+            "x-b3-traceid": "6347e4a4e0bce36d",
+            "x-xray-traceid": "d0cfa8af40379ad891eb34a26f39aa55",
+            "path": "/api/sns/v2/guide/user_guide",
+            "clientStart": 1793674272385,
+            "clientEnd": 1793674287455,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:44+08:00",
+            "request_time": 0.01,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.009
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 66,
+            "x-b3-traceid": "c19c59e466c4ea07",
+            "x-xray-traceid": "d0cfa8af41379ad924b6fc4026abc728",
+            "path": "/api/sns/v1/user/login/risk/status",
+            "clientStart": 1793674272387,
+            "clientEnd": 1793674287456,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:46+08:00",
+            "request_time": 3.236,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.01
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 40,
+            "x-b3-traceid": "6a1234cc03c44f3b",
+            "x-xray-traceid": "d0cfa8c7aab79ae6f7a7d06911d24a3f",
+            "path": "/api/im/v2/messages/unread",
+            "clientStart": 1793674284889,
+            "clientEnd": 1793674299984,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:46+08:00",
+            "request_time": 0.019,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.018
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 132,
+            "x-b3-traceid": "58d867b0ab142ccb",
+            "x-xray-traceid": "d0cfa8b169379adfa584fded2c210dda",
+            "path": "/api/sns/v2/user/tab/second_filter",
+            "clientStart": 1793674273493,
+            "clientEnd": 1793674288554,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:46+08:00",
+            "request_time": 3.005,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.012
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 37,
+            "x-b3-traceid": "7d0b75017afaf7cb",
+            "x-xray-traceid": "d0cfa8bfeb379ae4489fc83cc4ac8bbf",
+            "path": "/api/sns/v5/message",
+            "clientStart": 1793674280924,
+            "clientEnd": 1793674295955,
+            "clientHttp": 0,
+            "clientError": -1001,
+            "nodeAlias": "gateway-node-2"
+          },
+          {
+            "ActionDate": "2026-11-03T10:51:49+08:00",
+            "request_time": 0.011,
+            "response_status": 200,
+            "upstream_response_time": [
+              0.009
+            ],
+            "upstream_status": [
+              200
+            ],
+            "body_bytes_sent": 66,
+            "x-b3-traceid": "c9bbbc556491b254",
+            "x-xray-traceid": "d0cfa8cce4379ae9fcf2ac85385c223b",
+            "path": "/api/sns/v1/content/navigator",
+            "clientStart": 1793674287566,
+            "clientEnd": 1793674301349,
+            "clientHttp": 200,
+            "clientError": 0,
+            "nodeAlias": "gateway-node-2"
+          }
+        ],
+        "association": "这些是独立请求，仅作同设备上下文，不能代替本请求的连接绑定。"
+      },
+      "sourceUrl": "https://xray.devops.xiaohongshu.com/log/clickvisual"
+    },
+    {
+      "id": "REV-GATEWAY-CHECK",
+      "source": "review",
+      "type": "gateway-review",
+      "title": "同Trace与B3的网关上游耗时复核",
+      "traceId": "d0cfa8c0160fd956a28a674778396feb",
+      "endpoint": "/api/sns/v1/circle/base",
+      "method": "GET",
+      "queryId": "REV-Q-01",
+      "payload": {
+        "traceId": "d0cfa8c0160fd956a28a674778396feb",
+        "b3TraceId": "a7d874959b8f40d3",
+        "b3MatchesNativeRequestId": true,
+        "responseStatus": 200,
+        "gatewayDurationMs": 121,
+        "upstreamDurationMs": 120,
+        "bodyBytesSent": 5281,
+        "gatewayActionDate": "2026-11-03T10:51:43+08:00",
+        "clientNativeFailedAt": "2026-11-03 10:51:26.106",
+        "clockBoundary": "ActionDate来源和转发/采集延迟未完全核实；不能以两端时间差计算网络耗时，也不能证明200在客户端超时前已经到达。",
+        "successfulControl": "同一网关host另一次独立成功请求：客户端10:51:51.149结束，网关ActionDate=10:51:51。仅排查固定时钟偏移解释。"
+      },
+      "sourceUrl": "https://xray.devops.xiaohongshu.com/log/clickvisual"
+    },
+    {
+      "id": "REV-EVIDENCE-BOUNDARY",
+      "source": "review",
+      "type": "investigation-context",
+      "title": "已完成的补查与仍缺失的连接证据",
+      "traceId": "",
+      "requestId": "",
+      "queryId": "REV-Q-07",
+      "payload": {
+        "queriesCompleted": [
+          "已关联本设备19条请求的网关记录",
+          "已核对原生云端上报及当天延迟上传",
+          "已核对Vesta历史任务、下载目录与iOS附件能力"
+        ],
+        "cloudContextSamples": [
+          {
+            "ActionDate": "2026-11-03T10:44:30+08:00",
+            "eventTimeMs": 1793673867919,
+            "path": "/api/sns/user_cache/follow/cache",
+            "traceId": "d0cfa599023799fb8b8ca886c440d745",
+            "matchesIncidentTrace": false,
+            "requestSampleRateRaw": 0.005,
+            "sampleRateRaw": 0.01,
+            "source": "原生网络云端上报；仅同样本用户上下文，不属于目标请求。"
+          },
+          {
+            "ActionDate": "2026-11-03T10:50:52+08:00",
+            "eventTimeMs": 1793674252164,
+            "path": "/api/httpdns/v1/domains",
+            "traceId": "d0cfa8875d379a87006d56c8d7696d7a",
+            "matchesIncidentTrace": false,
+            "requestSampleRateRaw": 0.005,
+            "sampleRateRaw": 0.01,
+            "source": "原生网络云端上报；仅同样本用户上下文，不属于目标请求。"
+          }
+        ],
+        "cloudTargetTraceFound": false,
+        "vestaTask": "4621999",
+        "downloadedFiles": 4,
+        "additionalAttachments": 0,
+        "missingEvents": [
+          "source_dependency",
+          "HTTP_STREAM_JOB"
+        ],
+        "limitations": [
+          "云端两条采样记录均非本次Trace。",
+          "现有日志未提供请求到连接的直接绑定，不能确认H2等待、socket调度或容灾分支中的具体路径。",
+          "静默诊断默认模板为当前HTTP连通探测；未执行设备诊断，不能回溯当时连接。",
+          "未进行同版本复现，未证明修复有效。"
+        ]
+      },
+      "sourceUrl": "https://vesta.devops.xiaohongshu.com/xhs/log/log-salvage"
+    }
+  ],
+  "queries": [
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--table",
+        "rgw",
+        "http_host:edith.xiaohongshu.com AND (x-xray-traceid:d0cfa8c0160fd956a28a674778396feb OR x-xray-traceid:d0cfa88ac1e6f8c5fe115c2286ab9e64 OR x-xray-traceid:d0cfa8914dbbfc5d6236edea66b00598 OR x-xray-traceid:d0cfa887c9b79a9456ff7538f97aa565)",
+        "--st",
+        "1793673986",
+        "--et",
+        "1793674586",
+        "--page-size",
+        "100",
+        "--order",
+        "asc"
+      ],
+      "queriedAt": "2026-11-05T18:30:18+08:00",
+      "exitCode": 0,
+      "responseSha256": "2a6861c27253634dfae9a344373fc1d6a9455eb11dcbd35d2a1396546ef3ec77",
+      "id": "REV-Q-01",
+      "title": "精确复核本次及相邻请求的网关记录",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--table",
+        "rgw",
+        "http_host:edith.xiaohongshu.com AND (x-xray-traceid:d0cfa8c0160fd956a28a674778396feb OR x-xray-traceid:d0cfa8ad2db79ad3762d13ea7210f22a OR x-xray-traceid:d0cfa8aedb379ad4aa8eccc042efc7a1 OR x-xray-traceid:d0cfa8af40379ad891eb34a26f39aa55 OR x-xray-traceid:d0cfa8af41379ad924b6fc4026abc728 OR x-xray-traceid:d0cfa8af57b79ada0c68d2cfbe26d3e5 OR x-xray-traceid:d0cfa8afddb79adb38d63db0ad85ad01 OR x-xray-traceid:d0cfa8b052b79adcd594f66130049a19 OR x-xray-traceid:d0cfa8b166379ade9b4dbe3fe7dd0b09 OR x-xray-traceid:d0cfa8b169379adfa584fded2c210dda OR x-xray-traceid:d0cfa8bcdc379ae17c5408aa07466d49 OR x-xray-traceid:d0cfa8be62b79ae38325b79ff62fa001 OR x-xray-traceid:d0cfa8c7a5379ae504542f045aae26b7 OR x-xray-traceid:d0cfa8ca9cb79ae814fcfac1b8860826 OR x-xray-traceid:d0cfa8ccf3b79aea2067eb0a38b63199 OR x-xray-traceid:d0cfa8bcdf379ae21a9789b85ca73260 OR x-xray-traceid:d0cfa8bfeb379ae4489fc83cc4ac8bbf OR x-xray-traceid:d0cfa8c7aab79ae6f7a7d06911d24a3f OR x-xray-traceid:d0cfa8cce4379ae9fcf2ac85385c223b)",
+        "--st",
+        "1793674240",
+        "--et",
+        "1793674420",
+        "--page-size",
+        "100",
+        "--order",
+        "asc"
+      ],
+      "queriedAt": "2026-11-05T18:31:22+08:00",
+      "exitCode": 0,
+      "responseSha256": "3a30d17d7e2c4e4a090e4ac0031213e966bfbe9373add7f7d48c70f4f5f0033d",
+      "id": "REV-Q-02",
+      "title": "关联同设备19条请求的网关记录",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--table",
+        "rgw",
+        "http_host:edith.xiaohongshu.com AND (x-xray-traceid:d0cfa89056b79abd12b76b27e469ff80 OR x-xray-traceid:d0cfa89124379abe11bcd5fc0bc508b6 OR x-xray-traceid:d0cfa8914dbbfc5d6236edea66b00598 OR x-xray-traceid:d0cfa891d4b79abfb589443030189b29 OR x-xray-traceid:d0cfa891e63bfc5e3c9a63f24f140f08 OR x-xray-traceid:d0cfa891e6bbfc5f53f1e0d38bb3d1c5 OR x-xray-traceid:d0cfa89373379acda59f6862e51374a0 OR x-xray-traceid:d0cfa89476379acef94f27992d0dac34 OR x-xray-traceid:d0cfa8bcdc379ae17c5408aa07466d49 OR x-xray-traceid:d0cfa8be62b79ae38325b79ff62fa001 OR x-xray-traceid:d0cfa8c7a5379ae504542f045aae26b7 OR x-xray-traceid:d0cfa8ca9cb79ae814fcfac1b8860826 OR x-xray-traceid:d0cfa8cce4379ae9fcf2ac85385c223b OR x-xray-traceid:d0cfa8ccf3b79aea2067eb0a38b63199 OR x-xray-traceid:d0cfa8d566b79aec64bdd046e0522466 OR x-xray-traceid:d0cfa8e7d6379aedf11a75e9cf5fab9c)",
+        "--st",
+        "1793674200",
+        "--et",
+        "1793674460",
+        "--page-size",
+        "100",
+        "--order",
+        "asc"
+      ],
+      "queriedAt": "2026-11-05T18:36:16+08:00",
+      "exitCode": 0,
+      "responseSha256": "6ccf64c20e54f04653c3d4a00c8e0c9bc10a9f96dffa5bbbe1ba127dd7299fcd",
+      "id": "REV-Q-03",
+      "title": "用独立成功请求核对网关时间口径",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--mode",
+        "sql",
+        "SELECT ActionDate,event_time_ms,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:50:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-03 10:53:00','Asia/Shanghai') AND measurement_name='mobile_network_metrics' AND (position(event_data,'d0cfa8c0160fd956a28a674778396feb')>0 OR position(measurement_data,'d0cfa8c0160fd956a28a674778396feb')>0)"
+      ],
+      "queriedAt": "2026-11-05T18:43:48+08:00",
+      "exitCode": 1,
+      "responseSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resultInterpretation": "默认表选择错误导致服务端查询校验失败；非空结果。已按官方CLI表参数修正。",
+      "id": "REV-Q-04",
+      "title": "原生上报查询：首次表选择失败",
+      "success": false,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": "首次表选择未通过服务端校验，已纠正并保留后续执行结果。"
+    },
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--table",
+        "client_apm_to_clickhouse",
+        "--mode",
+        "sql",
+        "SELECT ActionDate,event_time_ms,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:50:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-03 10:53:00','Asia/Shanghai') AND measurement_name='mobile_network_metrics' AND (position(event_data,'d0cfa8c0160fd956a28a674778396feb')>0 OR position(measurement_data,'d0cfa8c0160fd956a28a674778396feb')>0)"
+      ],
+      "queriedAt": "2026-11-05T18:44:20+08:00",
+      "exitCode": 0,
+      "responseSha256": "e0b11709cfd5a10440f97d2429bae536af269d9ea88c96b1e9573985962e1a2a",
+      "resultInterpretation": "原生上报表在指定3分钟ActionDate窗口、指定measurement与精确Trace检索成功，返回0条。不证明请求未上报，无法排除采样/上报时间/字段编码差异。",
+      "id": "REV-Q-05",
+      "title": "精确查询本Trace的原生云端上报",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--table",
+        "client_apm_to_clickhouse",
+        "--mode",
+        "sql",
+        "SELECT ActionDate,event_time_ms,measurement_name,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:40:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-03 11:10:00','Asia/Shanghai') AND userInfo_userId='<REDACTED>' AND measurement_name IN ('mobile_network_metrics','mobileNetworkMetrics') ORDER BY ActionDate ASC"
+      ],
+      "queriedAt": "2026-11-05T18:50:23+08:00",
+      "exitCode": 0,
+      "responseSha256": "68b303161bd63b64f67838801a2615211de954cf7394e8d183f5d2149008d576",
+      "id": "REV-Q-06",
+      "title": "按用户与30分钟窗口补查原生上报",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "xray",
+      "command": [
+        "xray-cli",
+        "--output-format",
+        "json",
+        "log",
+        "query",
+        "--table",
+        "client_apm_to_clickhouse",
+        "--mode",
+        "sql",
+        "SELECT ActionDate,event_time_ms,measurement_name,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:40:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-04 00:00:00','Asia/Shanghai') AND event_time_ms>=1793674240000 AND event_time_ms<1793674340000 AND userInfo_userId='<REDACTED>' AND measurement_name IN ('mobile_network_metrics','mobileNetworkMetrics') ORDER BY ActionDate ASC"
+      ],
+      "queriedAt": "2026-11-05T18:52:10+08:00",
+      "exitCode": 0,
+      "responseSha256": "097ab86b797d5a40567f3c960f7d20fb72573a4479848543fd45fdbd13098f37",
+      "id": "REV-Q-07",
+      "title": "按事件时间核对当天延迟上报",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "list",
+        "--user-id",
+        "<REDACTED>",
+        "--platform",
+        "ios",
+        "--from",
+        "2026-11-03 00:00:00",
+        "--max-pages",
+        "3",
+        "--json"
+      ],
+      "exitCode": 1,
+      "queriedAt": "2026-11-05T18:49:08+08:00",
+      "responseSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "id": "REV-Q-08",
+      "title": "Vesta历史任务查询：首次缺少查询人",
+      "success": false,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": "首次未确定查询人，补充已核验的当前账号后查询成功。"
+    },
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "list",
+        "--user-id",
+        "<REDACTED>",
+        "--platform",
+        "ios",
+        "--from",
+        "2026-11-03 00:00:00",
+        "--max-pages",
+        "3",
+        "--json"
+      ],
+      "exitCode": 0,
+      "queriedAt": "2026-11-05T18:50:17+08:00",
+      "responseSha256": "f4c37ccd01ee6a9b424591e810c8748558f6931650b207ece53beafa6e7c48a9",
+      "id": "REV-Q-09",
+      "title": "核对Vesta历史任务与附件",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "file",
+        "types",
+        "--platform",
+        "ios",
+        "--json"
+      ],
+      "exitCode": 0,
+      "queriedAt": "2026-11-05T18:49:08+08:00",
+      "responseSha256": "42a0a2c04871227cdec88474039500cc6af090f1d41c15169a77bb4076faed31",
+      "id": "REV-Q-10",
+      "title": "核对iOS可回捞文件类型",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "custom",
+        "commands",
+        "--platform",
+        "ios",
+        "--json"
+      ],
+      "exitCode": 0,
+      "queriedAt": "2026-11-05T18:52:39+08:00",
+      "responseSha256": "6888951da5f184a47b00103a3271a7750e3f7cf5ff0c10f563c6c3e4be55b200",
+      "id": "REV-Q-11",
+      "title": "核对iOS诊断能力清单",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    },
+    {
+      "tool": "vesta",
+      "command": [
+        "vesta",
+        "log",
+        "custom",
+        "commands",
+        "--platform",
+        "ios",
+        "--command",
+        "silenceDiagnose",
+        "--json"
+      ],
+      "exitCode": 0,
+      "queriedAt": "2026-11-05T18:53:23+08:00",
+      "responseSha256": "913819b2feda4b75156794a6b0060f88dbe42a7e89aa7cef7e470fc10c967c09",
+      "id": "REV-Q-12",
+      "title": "查看静默诊断默认模板（未执行诊断）",
+      "success": true,
+      "scope": {
+        "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+        "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+      },
+      "error": ""
+    }
+  ],
+  "history": {
+    "kind": "retrospective",
+    "title": "历史排查回溯",
+    "description": "按调查目标回溯整理为三轮。时间来自真实取证记录，阶段判断根据留存证据整理；并非当时逐轮自动生成的结论快照。",
+    "rounds": [
+      {
+        "id": "link-evidence",
+        "title": "关联 APM 与网关",
+        "summary": "先确认超时，再核对同 Trace 下游记录",
+        "finding": "APM 记录 5 秒超时；同 Trace、接口与方法匹配到网关 HTTP 200、耗时 121 ms。未取得可用服务端 Span。",
+        "conclusion": "现有证据不支持直接归因为服务端处理慢，网关 200 也不能证明客户端已收到响应。",
+        "change": "从一条超时报错，推进到同 Trace 的跨端证据对照。",
+        "remaining": "客户端实际等待多久、是否收到响应，以及超时发生在哪个阶段，尚未取得直接证据。",
+        "evidenceRoles": [
+          "anchor",
+          "gateway"
+        ],
+        "queries": [
+          {
+            "id": "Q-01",
+            "title": "定位目标用户会话",
+            "tool": "apm",
+            "command": [
+              "apm-cli",
+              "log",
+              "session",
+              "list",
+              "--app",
+              "circles",
+              "--user-id",
+              "<REDACTED>",
+              "--st",
+              "2026-11-03 10:50:56",
+              "--et",
+              "2026-11-03 10:51:56",
+              "--limit",
+              "20"
+            ],
+            "queriedAt": "2026-11-04T16:51:03+08:00",
+            "scope": {
+              "app": "circles",
+              "start": "2026-11-03 10:50:56",
+              "end": "2026-11-03 10:51:56",
+              "limit": 20
+            },
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "edbc0e648cbf56ae0f7d158f1c96eed64d2c2469be5306828132bd33442b5f33",
+            "requestId": "48156d91-9a11-45fa-8604-82c1ee6ed24f",
+            "error": "",
+            "returnedCount": 3
+          },
+          {
+            "id": "Q-02",
+            "title": "读取完整客户端会话点位",
+            "tool": "apm",
+            "command": [
+              "apm-cli",
+              "log",
+              "session",
+              "detail",
+              "--app",
+              "circles",
+              "--user-id",
+              "<REDACTED>",
+              "--session-id",
+              "<REDACTED>",
+              "--st",
+              "2026-11-03 10:50:56",
+              "--et",
+              "2026-11-03 10:51:56",
+              "--limit",
+              "1000"
+            ],
+            "queriedAt": "2026-11-04T16:51:03+08:00",
+            "scope": {
+              "app": "circles",
+              "start": "2026-11-03 10:50:56",
+              "end": "2026-11-03 10:51:56",
+              "limit": 1000,
+              "sessionRef": "89c54223d548"
+            },
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "f934c5b8565c1958702916d6b2d4615eec57a50854d74850128deed69dcd0c11",
+            "requestId": "8cb0a6b9-61a9-4289-b2e2-1b0a321f337c",
+            "error": "",
+            "returnedCount": 79,
+            "possiblyTruncated": false
+          },
+          {
+            "id": "Q-03",
+            "title": "下钻本次超时的服务端 Trace",
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "trace",
+              "tree",
+              "--trace-id",
+              "d0cfa8c0160fd956a28a674778396feb",
+              "--mode",
+              "analysis"
+            ],
+            "queriedAt": "2026-11-04T16:51:04+08:00",
+            "scope": {
+              "traceId": "d0cfa8c0160fd956a28a674778396feb",
+              "mode": "analysis"
+            },
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "a46438a9e85f0117fae455c56effcec62cdc80bb14c273fa10f9a986b471d6b4",
+            "requestId": null,
+            "error": "",
+            "returnedCount": 0,
+            "responseSummary": {
+              "trace_id": "d0cfa8c0160fd956a28a674778396feb",
+              "analyzed_spans": null
+            }
+          },
+          {
+            "id": "Q-04",
+            "title": "查询本次超时的接入层记录",
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "rgw",
+              "http_host:edith.xiaohongshu.com AND x-xray-traceid:d0cfa8c0160fd956a28a674778396feb",
+              "--st",
+              "1793673986",
+              "--et",
+              "1793674586",
+              "--order",
+              "asc",
+              "--page-size",
+              "20"
+            ],
+            "queriedAt": "2026-11-04T16:51:11+08:00",
+            "scope": {
+              "traceId": "d0cfa8c0160fd956a28a674778396feb",
+              "host": "edith.xiaohongshu.com",
+              "startUnixSeconds": 1793673986,
+              "endUnixSeconds": 1793674586,
+              "limit": 20,
+              "table": "rgw"
+            },
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "bb3459ea799a25aeedb06bdd1cc5f5b0812666ca77251773a1655083a33a046b",
+            "requestId": null,
+            "error": "",
+            "returnedCount": 1
+          }
+        ]
+      },
+      {
+        "id": "native-timeout",
+        "title": "取得客户端原生日志",
+        "summary": "用实际计时确认原生网络层超时",
+        "finding": "Vesta 任务 4621999 已完成，取得 4 个明文文件；同 Trace 的原生指标记录 callDuration=5096 ms、errorCode=-1001、hasResponse=0。",
+        "conclusion": "客户端原生网络层确实超时，且日志记录未收到 HTTP 响应；APM 的 5000 ms 阈值已有实测耗时补证。",
+        "change": "从错误文案中的超时阈值，推进到同一请求的原生耗时与响应状态。",
+        "remaining": "超时已确认，但仍需拆解耗时阶段，核对连接、会话等待和取消记录。",
+        "evidenceRoles": [
+          "native"
+        ],
+        "queries": [
+          {
+            "id": "VESTA-200-Q-03",
+            "tool": "vesta",
+            "title": "下载已完成客户端回捞任务",
+            "command": [
+              "vesta",
+              "log",
+              "download",
+              "--task-id",
+              "4621999",
+              "--wait",
+              "45",
+              "--out",
+              "/private/tmp/trace-vesta-4621999-download",
+              "--json"
+            ],
+            "queriedAt": "2026-11-05T17:41:42+08:00",
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "3c410086c6103cf00d3116c69ada89cd2a67e8d196c0f7b30baa752b559e9a4f",
+            "error": ""
+          },
+          {
+            "id": "VESTA-200-Q-01",
+            "tool": "vesta",
+            "title": "查询200-completed任务实际状态",
+            "command": [
+              "vesta",
+              "log",
+              "list",
+              "--task-id",
+              "4621999",
+              "--json"
+            ],
+            "queriedAt": "2026-11-05T17:42:08+08:00",
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "bf7eeb5693de07535b0ebc69facd49d4082cb6c696c486a1023ac938b67ae71a",
+            "error": "",
+            "scope": {
+              "taskId": "4621999",
+              "caseTraceId": "d0cfa8c0160fd956a28a674778396feb",
+              "association": "current-case"
+            }
+          },
+          {
+            "id": "VESTA-200-Q-04",
+            "tool": "local-analysis",
+            "title": "对已下载明文精确检索 Trace 并脱敏摘录",
+            "command": [
+              "python3",
+              "/private/tmp/trace-vesta-4621999-analyze.py"
+            ],
+            "queriedAt": "2026-11-05T17:48:38+08:00",
+            "exitCode": 0,
+            "success": true,
+            "responseSha256": "c94efd6530145b8b17af2df2b5ac5eb68b180e417244cd8b0ef67a1cffa6bd2d",
+            "returnedCount": 10,
+            "scope": {
+              "taskId": "4621999",
+              "traceId": "d0cfa8c0160fd956a28a674778396feb",
+              "downloadedDecodedFiles": 4,
+              "sourceHashes": [
+                "c1b396903068e2ef70afa3d9cf5ff712581ffa95a003425b79123c0d61676087",
+                "a1d3a7d76dcd1763506590a8c44a71f5e781f7764bc1874b191557b93ced90cd",
+                "31e6d0b0642b88cda294d0b1085a5d7fa501364fc31daacd31989eeab30ba906",
+                "4ce89f8b5e4b77bf7ec4cf691419c6b890330864fca72c11911e610f0026f62f"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "stage-review",
+        "title": "拆解等待阶段并补查对照",
+        "summary": "定位主要等待阶段，明确根因仍需补证",
+        "finding": "原生 fetchStart 至 requestStart 间隔 4577 ms。同设备指定窗口内 19 条独立请求中有 13 条客户端超时；云端补查及附件核对仍未补齐本请求的连接绑定。",
+        "conclusion": "主要等待已定位到原生发送前阶段。网络链路不畅、客户端连接与会话管理仍是待验证方向，不能确认用户网络差。",
+        "change": "从确认超时，推进到定位等待阶段；补查同时明确了历史证据能够回答的边界。",
+        "remaining": "同版本复现并采集完整 NetLog，补齐请求到连接的 source_dependency、stream 标识及等待与容灾事件顺序。",
+        "evidenceRoles": [
+          "review-native",
+          "review-context",
+          "review-boundary"
+        ],
+        "queries": [
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "rgw",
+              "http_host:edith.xiaohongshu.com AND (x-xray-traceid:d0cfa8c0160fd956a28a674778396feb OR x-xray-traceid:d0cfa88ac1e6f8c5fe115c2286ab9e64 OR x-xray-traceid:d0cfa8914dbbfc5d6236edea66b00598 OR x-xray-traceid:d0cfa887c9b79a9456ff7538f97aa565)",
+              "--st",
+              "1793673986",
+              "--et",
+              "1793674586",
+              "--page-size",
+              "100",
+              "--order",
+              "asc"
+            ],
+            "queriedAt": "2026-11-05T18:30:18+08:00",
+            "exitCode": 0,
+            "responseSha256": "2a6861c27253634dfae9a344373fc1d6a9455eb11dcbd35d2a1396546ef3ec77",
+            "id": "REV-Q-01",
+            "title": "精确复核本次及相邻请求的网关记录",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "rgw",
+              "http_host:edith.xiaohongshu.com AND (x-xray-traceid:d0cfa8c0160fd956a28a674778396feb OR x-xray-traceid:d0cfa8ad2db79ad3762d13ea7210f22a OR x-xray-traceid:d0cfa8aedb379ad4aa8eccc042efc7a1 OR x-xray-traceid:d0cfa8af40379ad891eb34a26f39aa55 OR x-xray-traceid:d0cfa8af41379ad924b6fc4026abc728 OR x-xray-traceid:d0cfa8af57b79ada0c68d2cfbe26d3e5 OR x-xray-traceid:d0cfa8afddb79adb38d63db0ad85ad01 OR x-xray-traceid:d0cfa8b052b79adcd594f66130049a19 OR x-xray-traceid:d0cfa8b166379ade9b4dbe3fe7dd0b09 OR x-xray-traceid:d0cfa8b169379adfa584fded2c210dda OR x-xray-traceid:d0cfa8bcdc379ae17c5408aa07466d49 OR x-xray-traceid:d0cfa8be62b79ae38325b79ff62fa001 OR x-xray-traceid:d0cfa8c7a5379ae504542f045aae26b7 OR x-xray-traceid:d0cfa8ca9cb79ae814fcfac1b8860826 OR x-xray-traceid:d0cfa8ccf3b79aea2067eb0a38b63199 OR x-xray-traceid:d0cfa8bcdf379ae21a9789b85ca73260 OR x-xray-traceid:d0cfa8bfeb379ae4489fc83cc4ac8bbf OR x-xray-traceid:d0cfa8c7aab79ae6f7a7d06911d24a3f OR x-xray-traceid:d0cfa8cce4379ae9fcf2ac85385c223b)",
+              "--st",
+              "1793674240",
+              "--et",
+              "1793674420",
+              "--page-size",
+              "100",
+              "--order",
+              "asc"
+            ],
+            "queriedAt": "2026-11-05T18:31:22+08:00",
+            "exitCode": 0,
+            "responseSha256": "3a30d17d7e2c4e4a090e4ac0031213e966bfbe9373add7f7d48c70f4f5f0033d",
+            "id": "REV-Q-02",
+            "title": "关联同设备19条请求的网关记录",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "rgw",
+              "http_host:edith.xiaohongshu.com AND (x-xray-traceid:d0cfa89056b79abd12b76b27e469ff80 OR x-xray-traceid:d0cfa89124379abe11bcd5fc0bc508b6 OR x-xray-traceid:d0cfa8914dbbfc5d6236edea66b00598 OR x-xray-traceid:d0cfa891d4b79abfb589443030189b29 OR x-xray-traceid:d0cfa891e63bfc5e3c9a63f24f140f08 OR x-xray-traceid:d0cfa891e6bbfc5f53f1e0d38bb3d1c5 OR x-xray-traceid:d0cfa89373379acda59f6862e51374a0 OR x-xray-traceid:d0cfa89476379acef94f27992d0dac34 OR x-xray-traceid:d0cfa8bcdc379ae17c5408aa07466d49 OR x-xray-traceid:d0cfa8be62b79ae38325b79ff62fa001 OR x-xray-traceid:d0cfa8c7a5379ae504542f045aae26b7 OR x-xray-traceid:d0cfa8ca9cb79ae814fcfac1b8860826 OR x-xray-traceid:d0cfa8cce4379ae9fcf2ac85385c223b OR x-xray-traceid:d0cfa8ccf3b79aea2067eb0a38b63199 OR x-xray-traceid:d0cfa8d566b79aec64bdd046e0522466 OR x-xray-traceid:d0cfa8e7d6379aedf11a75e9cf5fab9c)",
+              "--st",
+              "1793674200",
+              "--et",
+              "1793674460",
+              "--page-size",
+              "100",
+              "--order",
+              "asc"
+            ],
+            "queriedAt": "2026-11-05T18:36:16+08:00",
+            "exitCode": 0,
+            "responseSha256": "6ccf64c20e54f04653c3d4a00c8e0c9bc10a9f96dffa5bbbe1ba127dd7299fcd",
+            "id": "REV-Q-03",
+            "title": "用独立成功请求核对网关时间口径",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--mode",
+              "sql",
+              "SELECT ActionDate,event_time_ms,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:50:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-03 10:53:00','Asia/Shanghai') AND measurement_name='mobile_network_metrics' AND (position(event_data,'d0cfa8c0160fd956a28a674778396feb')>0 OR position(measurement_data,'d0cfa8c0160fd956a28a674778396feb')>0)"
+            ],
+            "queriedAt": "2026-11-05T18:43:48+08:00",
+            "exitCode": 1,
+            "responseSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "resultInterpretation": "默认表选择错误导致服务端查询校验失败；非空结果。已按官方CLI表参数修正。",
+            "id": "REV-Q-04",
+            "title": "原生上报查询：首次表选择失败",
+            "success": false,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": "首次表选择未通过服务端校验，已纠正并保留后续执行结果。"
+          },
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "client_apm_to_clickhouse",
+              "--mode",
+              "sql",
+              "SELECT ActionDate,event_time_ms,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:50:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-03 10:53:00','Asia/Shanghai') AND measurement_name='mobile_network_metrics' AND (position(event_data,'d0cfa8c0160fd956a28a674778396feb')>0 OR position(measurement_data,'d0cfa8c0160fd956a28a674778396feb')>0)"
+            ],
+            "queriedAt": "2026-11-05T18:44:20+08:00",
+            "exitCode": 0,
+            "responseSha256": "e0b11709cfd5a10440f97d2429bae536af269d9ea88c96b1e9573985962e1a2a",
+            "resultInterpretation": "原生上报表在指定3分钟ActionDate窗口、指定measurement与精确Trace检索成功，返回0条。不证明请求未上报，无法排除采样/上报时间/字段编码差异。",
+            "id": "REV-Q-05",
+            "title": "精确查询本Trace的原生云端上报",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "client_apm_to_clickhouse",
+              "--mode",
+              "sql",
+              "SELECT ActionDate,event_time_ms,measurement_name,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:40:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-03 11:10:00','Asia/Shanghai') AND userInfo_userId='<REDACTED>' AND measurement_name IN ('mobile_network_metrics','mobileNetworkMetrics') ORDER BY ActionDate ASC"
+            ],
+            "queriedAt": "2026-11-05T18:50:23+08:00",
+            "exitCode": 0,
+            "responseSha256": "68b303161bd63b64f67838801a2615211de954cf7394e8d183f5d2149008d576",
+            "id": "REV-Q-06",
+            "title": "按用户与30分钟窗口补查原生上报",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "xray",
+            "command": [
+              "xray-cli",
+              "--output-format",
+              "json",
+              "log",
+              "query",
+              "--table",
+              "client_apm_to_clickhouse",
+              "--mode",
+              "sql",
+              "SELECT ActionDate,event_time_ms,measurement_name,event_data,measurement_data FROM reddw.client_apm_to_clickhouse WHERE ActionDate>=toDateTime('2026-11-03 10:40:00','Asia/Shanghai') AND ActionDate<toDateTime('2026-11-04 00:00:00','Asia/Shanghai') AND event_time_ms>=1793674240000 AND event_time_ms<1793674340000 AND userInfo_userId='<REDACTED>' AND measurement_name IN ('mobile_network_metrics','mobileNetworkMetrics') ORDER BY ActionDate ASC"
+            ],
+            "queriedAt": "2026-11-05T18:52:10+08:00",
+            "exitCode": 0,
+            "responseSha256": "097ab86b797d5a40567f3c960f7d20fb72573a4479848543fd45fdbd13098f37",
+            "id": "REV-Q-07",
+            "title": "按事件时间核对当天延迟上报",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "vesta",
+            "command": [
+              "vesta",
+              "log",
+              "list",
+              "--user-id",
+              "<REDACTED>",
+              "--platform",
+              "ios",
+              "--from",
+              "2026-11-03 00:00:00",
+              "--max-pages",
+              "3",
+              "--json"
+            ],
+            "exitCode": 1,
+            "queriedAt": "2026-11-05T18:49:08+08:00",
+            "responseSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "id": "REV-Q-08",
+            "title": "Vesta历史任务查询：首次缺少查询人",
+            "success": false,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": "首次未确定查询人，补充已核验的当前账号后查询成功。"
+          },
+          {
+            "tool": "vesta",
+            "command": [
+              "vesta",
+              "log",
+              "list",
+              "--user-id",
+              "<REDACTED>",
+              "--platform",
+              "ios",
+              "--from",
+              "2026-11-03 00:00:00",
+              "--max-pages",
+              "3",
+              "--json"
+            ],
+            "exitCode": 0,
+            "queriedAt": "2026-11-05T18:50:17+08:00",
+            "responseSha256": "f4c37ccd01ee6a9b424591e810c8748558f6931650b207ece53beafa6e7c48a9",
+            "id": "REV-Q-09",
+            "title": "核对Vesta历史任务与附件",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "vesta",
+            "command": [
+              "vesta",
+              "log",
+              "file",
+              "types",
+              "--platform",
+              "ios",
+              "--json"
+            ],
+            "exitCode": 0,
+            "queriedAt": "2026-11-05T18:49:08+08:00",
+            "responseSha256": "42a0a2c04871227cdec88474039500cc6af090f1d41c15169a77bb4076faed31",
+            "id": "REV-Q-10",
+            "title": "核对iOS可回捞文件类型",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "vesta",
+            "command": [
+              "vesta",
+              "log",
+              "custom",
+              "commands",
+              "--platform",
+              "ios",
+              "--json"
+            ],
+            "exitCode": 0,
+            "queriedAt": "2026-11-05T18:52:39+08:00",
+            "responseSha256": "6888951da5f184a47b00103a3271a7750e3f7cf5ff0c10f563c6c3e4be55b200",
+            "id": "REV-Q-11",
+            "title": "核对iOS诊断能力清单",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          },
+          {
+            "tool": "vesta",
+            "command": [
+              "vesta",
+              "log",
+              "custom",
+              "commands",
+              "--platform",
+              "ios",
+              "--command",
+              "silenceDiagnose",
+              "--json"
+            ],
+            "exitCode": 0,
+            "queriedAt": "2026-11-05T18:53:23+08:00",
+            "responseSha256": "913819b2feda4b75156794a6b0060f88dbe42a7e89aa7cef7e470fc10c967c09",
+            "id": "REV-Q-12",
+            "title": "查看静默诊断默认模板（未执行诊断）",
+            "success": true,
+            "scope": {
+              "description": "围绕原事件执行的留存补查；查询成功不代表命中本Trace。",
+              "incidentTraceId": "d0cfa8c0160fd956a28a674778396feb"
+            },
+            "error": ""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "source": "official-apm-cli",
+  "queriedAt": "2026-11-16T11:28:23+08:00",
+  "question": "圈子JS错误最近七天，平台及错误类型分布",
+  "definitionCheck": {
+    "executed": true,
+    "command": [
+      "apm-cli.js",
+      "metric",
+      "detail",
+      "--name",
+      "jsErrorCount",
+      "--app",
+      "circles"
+    ],
+    "exitCode": 1,
+    "success": false,
+    "error": "指标 jsErrorCount（应用 circles） 不存在。本次定义查询未命中；已载入官方CLI内置计数参考，可继续查询。平台维度=context_platform，错误类型维度=measurement_data.errorType；多天用apm.metric_range，来源会单独注明。"
+  },
+  "result": {
+    "metric": "jsErrorCount",
+    "app": "circles",
+    "mode": "range-summary",
+    "aggregation": "sum-of-counts",
+    "timeRange": {
+      "start": "2026-11-09T11:17:36+08:00",
+      "end": "2026-11-16T11:17:36+08:00"
+    },
+    "groupBy": [
+      "context_platform",
+      "measurement_data.errorType"
+    ],
+    "series": [
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "Error"
+        },
+        "value": 956,
+        "percentage": 15.24
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "HTTPClientError"
+        },
+        "value": 843,
+        "percentage": 13.44
+      },
+      {
+        "groupBy": {
+          "context_platform": "Harmony",
+          "measurement_data.errorType": "Error"
+        },
+        "value": 779,
+        "percentage": 12.42
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "HTTPBizError"
+        },
+        "value": 734,
+        "percentage": 11.7
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "Error"
+        },
+        "value": 630,
+        "percentage": 10.04
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "HTTPBizError"
+        },
+        "value": 600,
+        "percentage": 9.56
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "HTTPClientError"
+        },
+        "value": 551,
+        "percentage": 8.78
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "HTTPServerError"
+        },
+        "value": 361,
+        "percentage": 5.75
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "HTTPServerError"
+        },
+        "value": 274,
+        "percentage": 4.37
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "SchemaError"
+        },
+        "value": 161,
+        "percentage": 2.57
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "ClientError"
+        },
+        "value": 84,
+        "percentage": 1.34
+      },
+      {
+        "groupBy": {
+          "context_platform": "Harmony",
+          "measurement_data.errorType": "HTTPServerError"
+        },
+        "value": 76,
+        "percentage": 1.21
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "RangeError"
+        },
+        "value": 64,
+        "percentage": 1.02
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "SchemaError"
+        },
+        "value": 38,
+        "percentage": 0.61
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": ""
+        },
+        "value": 36,
+        "percentage": 0.57
+      },
+      {
+        "groupBy": {
+          "context_platform": "Harmony",
+          "measurement_data.errorType": "HTTPBizError"
+        },
+        "value": 29,
+        "percentage": 0.46
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "TypeError"
+        },
+        "value": 13,
+        "percentage": 0.21
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "ProfileCircleApiError"
+        },
+        "value": 13,
+        "percentage": 0.21
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "SyntaxError"
+        },
+        "value": 10,
+        "percentage": 0.16
+      },
+      {
+        "groupBy": {
+          "context_platform": "Harmony",
+          "measurement_data.errorType": "SchemaError"
+        },
+        "value": 9,
+        "percentage": 0.14
+      },
+      {
+        "groupBy": {
+          "context_platform": "Android",
+          "measurement_data.errorType": "TypeError"
+        },
+        "value": 8,
+        "percentage": 0.13
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "Invariant Violation"
+        },
+        "value": 3,
+        "percentage": 0.05
+      },
+      {
+        "groupBy": {
+          "context_platform": "iOS",
+          "measurement_data.errorType": "ClientError"
+        },
+        "value": 2,
+        "percentage": 0.03
+      }
+    ],
+    "observedCount": 6274,
+    "coverage": {
+      "complete": true,
+      "timeRangeComplete": true,
+      "plannedWindows": 7,
+      "successfulWindows": 7,
+      "groupLimitPerWindow": 200
+    },
+    "groupCount": 23,
+    "omittedGroupCount": 0,
+    "otherObservedCount": 0,
+    "windows": [
+      {
+        "start": "2026-11-09T11:17:36+08:00",
+        "end": "2026-11-10T11:17:36+08:00",
+        "success": true,
+        "groupCount": 19,
+        "groupsComplete": true,
+        "responseSha256": "283d84247f647f53cc8aacaf678224dbc6097aa330fba77b5833f33156d8d1bc",
+        "observedCount": 972.0
+      },
+      {
+        "start": "2026-11-10T11:17:36+08:00",
+        "end": "2026-11-11T11:17:36+08:00",
+        "success": true,
+        "groupCount": 19,
+        "groupsComplete": true,
+        "responseSha256": "3cf01a1f4176361315fba45db5c7f0769567f8176e427425103f4b7290c3bea7",
+        "observedCount": 913.0
+      },
+      {
+        "start": "2026-11-11T11:17:36+08:00",
+        "end": "2026-11-12T11:17:36+08:00",
+        "success": true,
+        "groupCount": 17,
+        "groupsComplete": true,
+        "responseSha256": "95b7e00ad5e8c962d0b0543739514335f69c1c340b18e1bcde123888d0a39f44",
+        "observedCount": 879.0
+      },
+      {
+        "start": "2026-11-12T11:17:36+08:00",
+        "end": "2026-11-13T11:17:36+08:00",
+        "success": true,
+        "groupCount": 18,
+        "groupsComplete": true,
+        "responseSha256": "f654cab0f52f38c2ee1796e47da1cee52584a8c73a7e1405eec485a467a9c52f",
+        "observedCount": 793.0
+      },
+      {
+        "start": "2026-11-13T11:17:36+08:00",
+        "end": "2026-11-14T11:17:36+08:00",
+        "success": true,
+        "groupCount": 21,
+        "groupsComplete": true,
+        "responseSha256": "64bf27257438064c16e7fab293e265d37bc74e59fe2adfa2c62205df600bf96c",
+        "observedCount": 824.0
+      },
+      {
+        "start": "2026-11-14T11:17:36+08:00",
+        "end": "2026-11-15T11:17:36+08:00",
+        "success": true,
+        "groupCount": 19,
+        "groupsComplete": true,
+        "responseSha256": "39e293a8827e5525667fb929765e96d208a721d4569ac45934b97b94403f8baf",
+        "observedCount": 991.0
+      },
+      {
+        "start": "2026-11-15T11:17:36+08:00",
+        "end": "2026-11-16T11:17:36+08:00",
+        "success": true,
+        "groupCount": 17,
+        "groupsComplete": true,
+        "responseSha256": "1395122b534168c1118b9a991c14a8a8caa195e26fc3fa6fc498228deeaa77ae",
+        "observedCount": 902.0
+      }
+    ],
+    "warnings": [],
+    "definitionReference": {
+      "definitionSource": "official-cli-reference",
+      "reference": "APM CLI 随包文档 metric-query.md：JS错误计数及筛选维度",
+      "referenceSha256": "764a91c78713e32bb3cc35952ed481dee07bab1e64684b9621d8883f6a631646"
+    },
+    "totalCount": 6274
+  },
+  "audit": {
+    "executed": true,
+    "subqueries": [
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-09T11:17:36+08:00",
+          "--et",
+          "2026-11-10T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-09T11:17:36+08:00",
+        "end": "2026-11-10T11:17:36+08:00",
+        "success": true,
+        "groupCount": 19,
+        "groupsComplete": true,
+        "responseSha256": "283d84247f647f53cc8aacaf678224dbc6097aa330fba77b5833f33156d8d1bc",
+        "observedCount": 972.0
+      },
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-10T11:17:36+08:00",
+          "--et",
+          "2026-11-11T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-10T11:17:36+08:00",
+        "end": "2026-11-11T11:17:36+08:00",
+        "success": true,
+        "groupCount": 19,
+        "groupsComplete": true,
+        "responseSha256": "3cf01a1f4176361315fba45db5c7f0769567f8176e427425103f4b7290c3bea7",
+        "observedCount": 913.0
+      },
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-11T11:17:36+08:00",
+          "--et",
+          "2026-11-12T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-11T11:17:36+08:00",
+        "end": "2026-11-12T11:17:36+08:00",
+        "success": true,
+        "groupCount": 17,
+        "groupsComplete": true,
+        "responseSha256": "95b7e00ad5e8c962d0b0543739514335f69c1c340b18e1bcde123888d0a39f44",
+        "observedCount": 879.0
+      },
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-12T11:17:36+08:00",
+          "--et",
+          "2026-11-13T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-12T11:17:36+08:00",
+        "end": "2026-11-13T11:17:36+08:00",
+        "success": true,
+        "groupCount": 18,
+        "groupsComplete": true,
+        "responseSha256": "f654cab0f52f38c2ee1796e47da1cee52584a8c73a7e1405eec485a467a9c52f",
+        "observedCount": 793.0
+      },
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-13T11:17:36+08:00",
+          "--et",
+          "2026-11-14T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-13T11:17:36+08:00",
+        "end": "2026-11-14T11:17:36+08:00",
+        "success": true,
+        "groupCount": 21,
+        "groupsComplete": true,
+        "responseSha256": "64bf27257438064c16e7fab293e265d37bc74e59fe2adfa2c62205df600bf96c",
+        "observedCount": 824.0
+      },
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-14T11:17:36+08:00",
+          "--et",
+          "2026-11-15T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-14T11:17:36+08:00",
+        "end": "2026-11-15T11:17:36+08:00",
+        "success": true,
+        "groupCount": 19,
+        "groupsComplete": true,
+        "responseSha256": "39e293a8827e5525667fb929765e96d208a721d4569ac45934b97b94403f8baf",
+        "observedCount": 991.0
+      },
+      {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-15T11:17:36+08:00",
+          "--et",
+          "2026-11-16T11:17:36+08:00",
+          "--metric",
+          "jsErrorCount",
+          "--filters",
+          "{}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "measurement_data.errorType",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>",
+        "start": "2026-11-15T11:17:36+08:00",
+        "end": "2026-11-16T11:17:36+08:00",
+        "success": true,
+        "groupCount": 17,
+        "groupsComplete": true,
+        "responseSha256": "1395122b534168c1118b9a991c14a8a8caa195e26fc3fa6fc498228deeaa77ae",
+        "observedCount": 902.0
+      }
+    ],
+    "requestCount": 7
+  },
+  "auditSha256": "08ac44afedb44cec2940cbf0c80f4a2eb58efe66a352231358874e45f96e252a",
+  "aiUsed": false
+}

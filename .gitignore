@@ -1,0 +1,9 @@
+.redInfo
+dist.zip
+dist/.cowork/
+node_modules/
+.DS_Store
+__pycache__/
+.trace-private/
+db.properties
+ai.properties

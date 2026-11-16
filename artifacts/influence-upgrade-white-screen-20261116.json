@@ -1,0 +1,1265 @@
+{
+  "application": "circles",
+  "route": "/circles/level-system/member-level/influence-upgrade-dialog",
+  "timeRange": {
+    "app": "circles",
+    "start": "2026-11-16T11:24:59+08:00",
+    "end": "2026-11-16T15:24:59+08:00"
+  },
+  "preparedAt": "2026-11-16T15:35:28+08:00",
+  "dataSource": "official-apm-cli default channel; not a verified reproduction of APM preaggregated data",
+  "filter": {
+    "measurement": "hybridWhiteScreen",
+    "measurement_data.i1": [
+      "1",
+      "2"
+    ]
+  },
+  "mainConclusion": "本轮主要异常集中在旧RN包缺路由后的强更重载/透明弹层承接链路；14/16记录匹配同用户同会话同路由的成功强更及shouldReload=1。已定位触发链路，尚未定位结束新页面的原生关闭原因。",
+  "population": {
+    "returnedWhiteCount": 16,
+    "logRangeComplete": true,
+    "metricCount": 16,
+    "platforms": {
+      "iOS": 15,
+      "Android": 1
+    },
+    "matchedForceUpdate": 14,
+    "sameMatchedSuccessAndReload": true,
+    "otherRecords": 2
+  },
+  "matches": [
+    {
+      "sample": 0,
+      "whiteAt": "2026-11-16 15:23:09.076",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 15:23:04.635",
+      "versionBefore": "3.9.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4441
+    },
+    {
+      "sample": 1,
+      "whiteAt": "2026-11-16 14:45:34.023",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 14:45:29.373",
+      "versionBefore": "3.9.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4650
+    },
+    {
+      "sample": 2,
+      "whiteAt": "2026-11-16 14:45:25.888",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 14:45:23.236",
+      "versionBefore": "2.2.1",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 2652
+    },
+    {
+      "sample": 3,
+      "whiteAt": "2026-11-16 14:44:53.557",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 14:44:49.417",
+      "versionBefore": "3.9.5",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4140
+    },
+    {
+      "sample": 4,
+      "whiteAt": "2026-11-16 14:43:03.902",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 14:42:59.013",
+      "versionBefore": "3.7.5",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4889
+    },
+    {
+      "sample": 5,
+      "whiteAt": "2026-11-16 14:23:40.938",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 14:23:36.971",
+      "versionBefore": "3.9.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 3967
+    },
+    {
+      "sample": 7,
+      "whiteAt": "2026-11-16 11:55:51.901",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 11:55:47.143",
+      "versionBefore": "3.5.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4758
+    },
+    {
+      "sample": 8,
+      "whiteAt": "2026-11-16 13:25:46.327",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 13:25:42.045",
+      "versionBefore": "3.9.7",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4282
+    },
+    {
+      "sample": 9,
+      "whiteAt": "2026-11-16 13:23:22.115",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 13:23:17.329",
+      "versionBefore": "3.9.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4786
+    },
+    {
+      "sample": 11,
+      "whiteAt": "2026-11-16 12:50:24.865",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 12:50:20.574",
+      "versionBefore": "3.7.2",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4291
+    },
+    {
+      "sample": 12,
+      "whiteAt": "2026-11-16 12:46:40.733",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 12:46:39.022",
+      "versionBefore": "3.9.7",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 1711
+    },
+    {
+      "sample": 13,
+      "whiteAt": "2026-11-16 12:40:49.465",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 12:40:44.449",
+      "versionBefore": "3.9.5",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 5016
+    },
+    {
+      "sample": 14,
+      "whiteAt": "2026-11-16 11:57:59.045",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 11:57:56.407",
+      "versionBefore": "2.10.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 2638
+    },
+    {
+      "sample": 15,
+      "whiteAt": "2026-11-16 11:39:30.865",
+      "platform": "iOS",
+      "type": 2,
+      "nodeCheck": 1,
+      "ratio": 100,
+      "sameUserSessionAndRoute": true,
+      "forceAt": "2026-11-16 11:39:26.663",
+      "versionBefore": "3.9.0",
+      "versionAfter": "3.20.3",
+      "success": "1",
+      "shouldReload": "1",
+      "deltaMs": 4202
+    }
+  ],
+  "cases": [
+    {
+      "case": "SAMPLE-1-NARROW",
+      "exactSessionEvents": [
+        {
+          "timestamp": 1794813783491,
+          "time": "2026-11-16 15:23:03.491",
+          "measurementName": "hybridStability",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813783491,
+          "time": "2026-11-16 15:23:03.491",
+          "measurementName": "hybridPageView",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813783491,
+          "time": "2026-11-16 15:23:03.491",
+          "measurementName": "hybridPvWithRollbackInfo",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "type": "RN",
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813783785,
+          "time": "2026-11-16 15:23:03.785",
+          "measurementName": "httpRequestTiming",
+          "path": "/circles/*",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "traceId": "d0f19e76f6481b29fc381f4ffe545570",
+            "duration": 250.604,
+            "matchedPath": "/api/v5/record/latest",
+            "method": "POST",
+            "apiPrefetchType": 5,
+            "requestEndTime": 1794813783782,
+            "url": "https://rn-resource-app.xiaohongshu.com/api/v5/record/latest",
+            "status": 201,
+            "requestStartTime": 1794813783532,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813784635,
+          "time": "2026-11-16 15:23:04.635",
+          "measurementName": "rn_forceupdate_result",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "success": "1",
+            "versionBefore": "3.9.0",
+            "shouldReload": "1",
+            "errorMsg": "success",
+            "versionAfter": "3.20.3",
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813788553,
+          "time": "2026-11-16 15:23:08.553",
+          "measurementName": "interactiveTiming",
+          "path": "/circles/*",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813788553,
+          "time": "2026-11-16 15:23:08.553",
+          "measurementName": "interactiveTiming",
+          "path": "/circles/*",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "sameUserOtherSessionContext": [
+        {
+          "timestamp": 1794813784639,
+          "time": "2026-11-16 15:23:04.639",
+          "measurementName": "hybridPageEnd",
+          "sessionRef": "S-18ca94406971",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "firstMeaningfulPaint": 0,
+            "pageSuccess": 0,
+            "stayDuration": 4,
+            "fmpLoad": 0,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794813784639,
+          "time": "2026-11-16 15:23:04.639",
+          "measurementName": "hybridPageView",
+          "sessionRef": "S-18ca94406971",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "scopeNote": "其他session仅作同用户上下文，不当作原容器同一会话。",
+      "returnedRows": 78,
+      "limit": 100,
+      "reachedLimit": false
+    },
+    {
+      "case": "SAMPLE-2-TIMELINE",
+      "exactSessionEvents": [
+        {
+          "timestamp": 1794811528432,
+          "time": "2026-11-16 14:45:28.432",
+          "measurementName": "hybridPvWithRollbackInfo",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "type": "RN",
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811528432,
+          "time": "2026-11-16 14:45:28.432",
+          "measurementName": "hybridPageView",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811528473,
+          "time": "2026-11-16 14:45:28.473",
+          "measurementName": "hybridStability",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811528584,
+          "time": "2026-11-16 14:45:28.584",
+          "measurementName": "httpRequestTiming",
+          "path": "/circles/*",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "requestEndTime": 1794811528583,
+            "matchedPath": "/api/v5/record/latest",
+            "url": "https://rn-resource-app.xiaohongshu.com/api/v5/record/latest",
+            "requestStartTime": 1794811528471,
+            "traceId": "d0f18d428bed4b50a29a6117acb12942",
+            "method": "POST",
+            "apiPrefetchType": 5,
+            "duration": 112.131,
+            "status": 201,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811529373,
+          "time": "2026-11-16 14:45:29.373",
+          "measurementName": "rn_forceupdate_result",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "shouldReload": "1",
+            "errorMsg": "success",
+            "versionAfter": "3.20.3",
+            "success": "1",
+            "versionBefore": "3.9.0",
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811533494,
+          "time": "2026-11-16 14:45:33.494",
+          "measurementName": "interactiveTiming",
+          "path": "/circles/*",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811533494,
+          "time": "2026-11-16 14:45:33.494",
+          "measurementName": "interactiveTiming",
+          "path": "/circles/*",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.9.0",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811534010,
+          "time": "2026-11-16 14:45:34.010",
+          "measurementName": "hybridPageEnd",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "pageSuccess": 0,
+            "stayDuration": 5586,
+            "fmpLoad": 0,
+            "firstMeaningfulPaint": 0,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811534023,
+          "time": "2026-11-16 14:45:34.023",
+          "measurementName": "hybridWhiteScreen",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "errorType": "",
+            "type": 2,
+            "time": 4985,
+            "nodeCheck": 1,
+            "ratio": 100,
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "sameUserOtherSessionContext": [
+        {
+          "timestamp": 1794811529378,
+          "time": "2026-11-16 14:45:29.378",
+          "measurementName": "hybridPageView",
+          "sessionRef": "S-c3db8f775e5b",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794811529379,
+          "time": "2026-11-16 14:45:29.379",
+          "measurementName": "hybridPageEnd",
+          "sessionRef": "S-c3db8f775e5b",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.49.1",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "pageSuccess": 0,
+            "stayDuration": 5,
+            "fmpLoad": 0,
+            "firstMeaningfulPaint": 0,
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "scopeNote": "其他session仅作同用户上下文，不当作原容器同一会话。",
+      "returnedRows": 89,
+      "limit": 100,
+      "reachedLimit": false
+    },
+    {
+      "case": "SAMPLE-3-TIMELINE",
+      "exactSessionEvents": [
+        {
+          "timestamp": 1794807759484,
+          "time": "2026-11-16 13:42:39.484",
+          "measurementName": "hybridPageView",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807759485,
+          "time": "2026-11-16 13:42:39.485",
+          "measurementName": "hybridPvWithRollbackInfo",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "type": "RN",
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807759670,
+          "time": "2026-11-16 13:42:39.670",
+          "measurementName": "hybridPageEnd",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "stayDuration": 188,
+            "fmpLoad": 0,
+            "pageSuccess": 0,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807764451,
+          "time": "2026-11-16 13:42:44.451",
+          "measurementName": "httpRequestTiming",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "url": "https://edith.xiaohongshu.com/api/sns/v1/circle/get/influence/update/info",
+            "status": 200,
+            "requestStartTime": 1794807764276,
+            "traceId": "d0f1708a9894357172cba203c03c814d",
+            "requestEndTime": 1794807764450,
+            "matchedPath": "/api/sns/v1/circle/get/influence/update/info",
+            "duration": 174.413,
+            "method": "GET",
+            "apiPrefetchType": 5,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807764520,
+          "time": "2026-11-16 13:42:44.520",
+          "measurementName": "rnImage",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807764521,
+          "time": "2026-11-16 13:42:44.521",
+          "measurementName": "rnImage",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807764648,
+          "time": "2026-11-16 13:42:44.648",
+          "measurementName": "rnImage",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807764773,
+          "time": "2026-11-16 13:42:44.773",
+          "measurementName": "rnImage",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807765785,
+          "time": "2026-11-16 13:42:45.785",
+          "measurementName": "paintTiming",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "firstMeaningfulPaint": 0,
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794807765981,
+          "time": "2026-11-16 13:42:45.981",
+          "measurementName": "hybridWhiteScreen",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "Android",
+          "appVersion": "discovery-9.53.3",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "time": 5000,
+            "ratio": 100,
+            "errorType": "[]",
+            "nodeCheck": 1,
+            "type": 2,
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "sameUserOtherSessionContext": [],
+      "scopeNote": "其他session仅作同用户上下文，不当作原容器同一会话。",
+      "returnedRows": 99,
+      "limit": 100,
+      "reachedLimit": false
+    },
+    {
+      "case": "EXCEPTION-1-TIMELINE",
+      "exactSessionEvents": [
+        {
+          "timestamp": 1794805022263,
+          "time": "2026-11-16 12:57:02.263",
+          "measurementName": "hybridPageView",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794805022264,
+          "time": "2026-11-16 12:57:02.264",
+          "measurementName": "hybridPvWithRollbackInfo",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "type": "RN",
+            "diagnosticFlags": []
+          }
+        },
+        {
+          "timestamp": 1794805028088,
+          "time": "2026-11-16 12:57:08.088",
+          "measurementName": "hybridWhiteScreen",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "time": 4983,
+            "type": 2,
+            "nodeCheck": 0,
+            "ratio": 100,
+            "errorType": "[\"JS_ERROR\"]",
+            "diagnosticFlags": [
+              "timeout of 5000ms exceeded"
+            ]
+          }
+        },
+        {
+          "timestamp": 1794805028089,
+          "time": "2026-11-16 12:57:08.089",
+          "measurementName": "hybridStability",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "sameUserOtherSessionContext": [
+        {
+          "timestamp": 1794805021595,
+          "time": "2026-11-16 12:57:01.595",
+          "measurementName": "hybridPageView",
+          "sessionRef": "S-c5025ba7e8ba",
+          "path": "/circles/level-system/member-level/influence-upgrade-dialog",
+          "platform": "iOS",
+          "appVersion": "discovery-9.54.2",
+          "artifactVersion": "3.20.3",
+          "data": {
+            "diagnosticFlags": []
+          }
+        }
+      ],
+      "scopeNote": "其他session仅作同用户上下文，不当作原容器同一会话。",
+      "returnedRows": 64,
+      "limit": 100,
+      "reachedLimit": false
+    }
+  ],
+  "sourceCodeChecks": [
+    {
+      "revision": "783fbbc74a",
+      "packageVersion": "3.9.0",
+      "routePresent": false
+    },
+    {
+      "revision": "5a6a111d63",
+      "packageVersion": "3.9.7",
+      "routePresent": false
+    },
+    {
+      "package": "@xhs/asgard-router@6.0.25",
+      "file": "src/components/not-found.tsx",
+      "mechanism": "缺路由时checkVersion→forceUpdate(redirect)；hasNew为true时render返回null",
+      "limit": "本地框架机制旁证，未逐字验证所有线上旧包依赖版本。"
+    }
+  ],
+  "limits": [
+    "14/16为本次固定4小时CLI返回记录，不外推全部日期或所有白屏。",
+    "新版上报版本不能证明该业务页面已成功渲染。",
+    "同用户不同session的4–5ms页面结束只作重载上下文，原生容器替换关系需进一步核对。",
+    "没有Native closeReason，不能将约5秒结束认定为心跳超时。",
+    "Android提前退出和iOS携带超时上下文的两条未归入强更主因。"
+  ],
+  "recommendedNextActions": [
+    "入口先满足支持该路由的已发布RN最低版本，再展示升级弹窗。",
+    "定向复现旧3.9.x→3.20.3的代理透明弹层重载，记录重开、关闭与首帧，核对新页面为何迅速结束。",
+    "原容器已被重载替换或退出时，核对是否应取消其白屏探测；不能简单过滤全部白屏。"
+  ],
+  "queries": [
+    {
+      "id": "CURRENT-METRIC",
+      "tool": "apm.metric",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T11:24:59+08:00",
+        "end": "2026-11-16T15:24:59+08:00",
+        "name": "hybridWhiteScreenCount",
+        "groupBy": [
+          "context_platform",
+          "context_artifactVersion",
+          "measurement_data.i1"
+        ],
+        "filters": {
+          "context_matchedPath": {
+            "method": "include",
+            "values": [
+              "/circles/level-system/member-level/influence-upgrade-dialog"
+            ]
+          },
+          "measurement_data.i1": {
+            "method": "include",
+            "values": [
+              "1",
+              "2"
+            ]
+          }
+        },
+        "limit": 200
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "metric",
+          "query",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T11:24:59+08:00",
+          "--et",
+          "2026-11-16T15:24:59+08:00",
+          "--metric",
+          "hybridWhiteScreenCount",
+          "--filters",
+          "{\"context_matchedPath\": {\"method\": \"include\", \"values\": [\"/circles/level-system/member-level/influence-upgrade-dialog\"]}, \"measurement_data.i1\": {\"method\": \"include\", \"values\": [\"1\", \"2\"]}}",
+          "--group-by",
+          "context_platform",
+          "--group-by",
+          "context_artifactVersion",
+          "--group-by",
+          "measurement_data.i1",
+          "--limit",
+          "200"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "4cd07d3ce15b38621a20fb7dff38fe53c787e6a4b1cd238182e9320d2bbce5b5"
+    },
+    {
+      "id": "CURRENT-WHITE",
+      "tool": "apm.logs",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T11:24:59+08:00",
+        "end": "2026-11-16T15:24:59+08:00",
+        "measurements": [
+          "hybridWhiteScreen"
+        ],
+        "page": "/circles/level-system/member-level/influence-upgrade-dialog",
+        "filters": [
+          "measurement_data.i1=1,2"
+        ],
+        "limit": 30
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "search",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T11:24:59+08:00",
+          "--et",
+          "2026-11-16T15:24:59+08:00",
+          "--limit",
+          "30",
+          "--measurement-name",
+          "hybridWhiteScreen",
+          "--page-path",
+          "/circles/level-system/member-level/influence-upgrade-dialog",
+          "--filter",
+          "measurement_data.i1=1,2"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "e4a005b2b1d51b4ad09daccb6d204c053fa0a77a4389f33acc1919d0b59fc877"
+    },
+    {
+      "id": "CURRENT-FORCE-UPDATE",
+      "tool": "apm.logs",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T11:24:59+08:00",
+        "end": "2026-11-16T15:24:59+08:00",
+        "page": "/circles/level-system/member-level/influence-upgrade-dialog",
+        "measurements": [
+          "rn_forceupdate_result"
+        ],
+        "limit": 50
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "search",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T11:24:59+08:00",
+          "--et",
+          "2026-11-16T15:24:59+08:00",
+          "--limit",
+          "50",
+          "--measurement-name",
+          "rn_forceupdate_result",
+          "--page-path",
+          "/circles/level-system/member-level/influence-upgrade-dialog"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "4f43a08ae89df9c207247325357fc45a33b5e606a196c151d47ec4a2f8c315ba"
+    },
+    {
+      "id": "SAMPLE-1-SESSIONS",
+      "tool": "apm.sessions",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T15:22:29.076000+08:00",
+        "end": "2026-11-16T15:23:29.076000+08:00",
+        "userRef": "U-5cbe25247858"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "list",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T15:22:29+08:00",
+          "--et",
+          "2026-11-16T15:23:29+08:00",
+          "--user-id",
+          "U-5cbe25247858",
+          "--limit",
+          "20"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "87dd4a002ee2e959a1c9b84c91c35229f991b757bce8d0558f93ef8e2ce8937f"
+    },
+    {
+      "id": "SAMPLE-1-TIMELINE",
+      "tool": "apm.session",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T15:22:29.076000+08:00",
+        "end": "2026-11-16T15:23:29.076000+08:00",
+        "userRef": "U-5cbe25247858",
+        "sessionRef": "S-2c2817958958"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "detail",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T15:22:29+08:00",
+          "--et",
+          "2026-11-16T15:23:29+08:00",
+          "--user-id",
+          "U-5cbe25247858",
+          "--session-id",
+          "S-2c2817958958",
+          "--limit",
+          "100"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "6f443d12ea6f8ab01fab5575c93b5a65b5e7495b175e6372bb7b7d49e365f0fd"
+    },
+    {
+      "id": "SAMPLE-2-SESSIONS",
+      "tool": "apm.sessions",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T14:44:54.023000+08:00",
+        "end": "2026-11-16T14:45:54.023000+08:00",
+        "userRef": "U-257f2bd6eafc"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "list",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T14:44:54+08:00",
+          "--et",
+          "2026-11-16T14:45:54+08:00",
+          "--user-id",
+          "U-257f2bd6eafc",
+          "--limit",
+          "20"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "3d817251318911ac3c77f801157d14555ae35422ad073def3c0e01cbcb95b4ba"
+    },
+    {
+      "id": "SAMPLE-2-TIMELINE",
+      "tool": "apm.session",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T14:44:54.023000+08:00",
+        "end": "2026-11-16T14:45:54.023000+08:00",
+        "userRef": "U-257f2bd6eafc",
+        "sessionRef": "S-3747a6a359fb"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "detail",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T14:44:54+08:00",
+          "--et",
+          "2026-11-16T14:45:54+08:00",
+          "--user-id",
+          "U-257f2bd6eafc",
+          "--session-id",
+          "S-3747a6a359fb",
+          "--limit",
+          "100"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "0b52500c008f0c7189cdf7436e23bbe7e711bd169724de45d7a194e4b3e4767e"
+    },
+    {
+      "id": "SAMPLE-3-SESSIONS",
+      "tool": "apm.sessions",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T13:42:05.981000+08:00",
+        "end": "2026-11-16T13:43:05.981000+08:00",
+        "userRef": "U-8c7f2b0b22f3"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "list",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T13:42:05+08:00",
+          "--et",
+          "2026-11-16T13:43:05+08:00",
+          "--user-id",
+          "U-8c7f2b0b22f3",
+          "--limit",
+          "20"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "f3daafded8310e9e5c06a0b9eecc037ac4463aef7d889fc0c356678677b6e66d"
+    },
+    {
+      "id": "SAMPLE-3-TIMELINE",
+      "tool": "apm.session",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T13:42:05.981000+08:00",
+        "end": "2026-11-16T13:43:05.981000+08:00",
+        "userRef": "U-8c7f2b0b22f3",
+        "sessionRef": "S-3e839f5b2a3e"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "detail",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T13:42:05+08:00",
+          "--et",
+          "2026-11-16T13:43:05+08:00",
+          "--user-id",
+          "U-8c7f2b0b22f3",
+          "--session-id",
+          "S-3e839f5b2a3e",
+          "--limit",
+          "100"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "3aa38a3f0c277c567dedde0837b45d4f80ed838ebe6424f41cc3186a21307b93"
+    },
+    {
+      "id": "EXCEPTION-1-TIMELINE",
+      "tool": "apm.session",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T12:56:48.088000+08:00",
+        "end": "2026-11-16T12:57:23.088000+08:00",
+        "userRef": "U-790573fd5300",
+        "sessionRef": "S-f562e1fbb5aa"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "detail",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T12:56:48+08:00",
+          "--et",
+          "2026-11-16T12:57:23+08:00",
+          "--user-id",
+          "U-790573fd5300",
+          "--session-id",
+          "S-f562e1fbb5aa",
+          "--limit",
+          "100"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "8db8aa4ed0da05c19f7bdd96ad05b6a8c0c941a062113b92d5d11db78a7049b9"
+    },
+    {
+      "id": "EXCEPTION-2-TIMELINE",
+      "tool": "apm.session",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T13:25:26.327000+08:00",
+        "end": "2026-11-16T13:26:01.327000+08:00",
+        "userRef": "U-603bb7b8a526",
+        "sessionRef": "S-e1983766955c"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "detail",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T13:25:26+08:00",
+          "--et",
+          "2026-11-16T13:26:01+08:00",
+          "--user-id",
+          "U-603bb7b8a526",
+          "--session-id",
+          "S-e1983766955c",
+          "--limit",
+          "100"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "f963c36690de82deef62467c37c3896d6ff18c1b2bdbe3ad7388b9e0b45343c3"
+    },
+    {
+      "id": "SAMPLE-1-NARROW",
+      "tool": "apm.session",
+      "scope": {
+        "app": "circles",
+        "start": "2026-11-16T15:22:59.076000+08:00",
+        "end": "2026-11-16T15:23:12.076000+08:00",
+        "userRef": "U-5cbe25247858",
+        "sessionRef": "S-2c2817958958"
+      },
+      "audit": {
+        "executed": true,
+        "command": [
+          "apm-cli.js",
+          "log",
+          "session",
+          "detail",
+          "--app",
+          "circles",
+          "--st",
+          "2026-11-16T15:22:59+08:00",
+          "--et",
+          "2026-11-16T15:23:12+08:00",
+          "--user-id",
+          "U-5cbe25247858",
+          "--session-id",
+          "S-2c2817958958",
+          "--limit",
+          "100"
+        ],
+        "exitCode": 0,
+        "requestId": "<DEVICE_REMOVED>"
+      },
+      "responseSha256": "196d2c7a9c2d785e92c64bc176ea5c79a47334c737d8d8e2d1a5a9c625ce0c36"
+    }
+  ],
+  "mechanismReference": "https://docs.xiaohongshu.com/doc/f7322450de3090c40a5550e085dfe470"
+}

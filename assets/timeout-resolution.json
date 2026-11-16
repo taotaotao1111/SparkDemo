@@ -1,0 +1,67 @@
+{
+  "kind": "user-confirmed-metric-correction",
+  "binding": {
+    "application": "circles",
+    "traceIds": [
+      "d0cfa8c0160fd956a28a674778396feb",
+      "d0cfa9324c81156b1c6eb03425f916c7",
+      "d0d2b8becc63ec706c55c273df5c721d"
+    ],
+    "error": "timeout of 5000ms exceeded",
+    "incidents": [
+      {
+        "traceId": "d0cfa8c0160fd956a28a674778396feb",
+        "timestamp": 1793674286110,
+        "bundle": "circles@3.15.0",
+        "endpoint": "/api/sns/v1/circle/base",
+        "method": "GET"
+      },
+      {
+        "traceId": "d0cfa9324c81156b1c6eb03425f916c7",
+        "timestamp": 1793674344492,
+        "bundle": "circles@3.15.0",
+        "endpoint": "/api/sns/v1/circle/base",
+        "method": "GET"
+      },
+      {
+        "traceId": "d0d2b8becc63ec706c55c273df5c721d",
+        "timestamp": 1793777045797,
+        "bundle": "circles@3.15.0",
+        "endpoint": "/api/sns/v1/circle/base",
+        "method": "GET"
+      }
+    ]
+  },
+  "reportedOn": "2026-11-06",
+  "sourceKind": "business-feedback",
+  "sourceLabel": "业务确认 · 用户反馈",
+  "originalFeedback": "圈子超时，真实原因在于，业务对于接口异常，自己上报了一份js异常，从而导致指标数一直过大。已经将其过滤，后续指标会反映真实情况。",
+  "title": "JS 异常指标偏高原因已确认，相关上报已过滤",
+  "summary": "业务将接口异常额外作为 JS 异常上报，放大了 JS 异常指标。相关记录已过滤，后续按调整后的口径观察真实趋势。",
+  "scope": "本次处理针对 JS 异常指标统计口径；历史单次请求的网络超时原因仍单独保留。",
+  "mitigationStatus": "reported-applied",
+  "verificationStatus": "pending-trend-check",
+  "effectiveAt": null,
+  "nextAction": "核对过滤后的指标趋势",
+  "nextDetail": "按相同应用、时间范围和流量口径对照过滤前后趋势。业务已反馈过滤完成；尚未提供生效时间、变更记录或过滤后的统计结果。",
+  "recordId": "BUSINESS-METRIC-CORRECTION",
+  "record": {
+    "id": "BUSINESS-METRIC-CORRECTION",
+    "source": "business",
+    "type": "investigation-context",
+    "title": "业务确认：接口异常被额外上报为 JS 异常",
+    "traceId": "",
+    "requestId": "",
+    "queryId": "",
+    "occurredAt": "2026-11-06（业务反馈日期）",
+    "payload": {
+      "source": "用户在本次对话中的业务处理反馈",
+      "reportedOn": "2026-11-06",
+      "originalFeedback": "圈子超时，真实原因在于，业务对于接口异常，自己上报了一份js异常，从而导致指标数一直过大。已经将其过滤，后续指标会反映真实情况。",
+      "confirmedMetricCause": "业务将接口异常额外作为 JS 异常上报，放大 JS 异常指标。",
+      "reportedAction": "相关记录已过滤。",
+      "effectiveAt": null,
+      "verification": "尚未查询过滤后趋势；不表示所有网络超时均已修复。"
+    }
+  }
+}
